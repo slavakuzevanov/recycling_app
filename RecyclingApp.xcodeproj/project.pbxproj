@@ -11,8 +11,17 @@
 		F96DA5812B5C0AFF00EFAD52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5802B5C0AFF00EFAD52 /* SceneDelegate.swift */; };
 		F96DA5832B5C0AFF00EFAD52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5822B5C0AFF00EFAD52 /* ViewController.swift */; };
 		F96DA5862B5C0AFF00EFAD52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96DA5842B5C0AFF00EFAD52 /* Main.storyboard */; };
-		F96DA5882B5C0B0000EFAD52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F96DA5872B5C0B0000EFAD52 /* Assets.xcassets */; };
 		F96DA58B2B5C0B0000EFAD52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96DA5892B5C0B0000EFAD52 /* LaunchScreen.storyboard */; };
+		F96DA5922B5C134300EFAD52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F96DA5872B5C0B0000EFAD52 /* Assets.xcassets */; };
+		F96DA5962B5C20F100EFAD52 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5952B5C20F100EFAD52 /* AlertService.swift */; };
+		F96DA5982B5C211D00EFAD52 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5972B5C211D00EFAD52 /* NetworkingService.swift */; };
+		F96DA59A2B5C216D00EFAD52 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5992B5C216D00EFAD52 /* Message.swift */; };
+		F96DA59C2B5C218700EFAD52 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA59B2B5C218700EFAD52 /* Login.swift */; };
+		F96DA59E2B5C21B100EFAD52 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA59D2B5C21B100EFAD52 /* ErrorResponse.swift */; };
+		F96DA5A22B5C249000EFAD52 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5A12B5C249000EFAD52 /* FormTextField.swift */; };
+		F96DA5A42B5C27FA00EFAD52 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5A32B5C27FA00EFAD52 /* LoginViewController.swift */; };
+		F96DA5A82B5C57DA00EFAD52 /* MainAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5A72B5C57DA00EFAD52 /* MainAppViewController.swift */; };
+		F96DA5AA2B5C627300EFAD52 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5A92B5C627300EFAD52 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +33,15 @@
 		F96DA5872B5C0B0000EFAD52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F96DA58A2B5C0B0000EFAD52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F96DA58C2B5C0B0000EFAD52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F96DA5952B5C20F100EFAD52 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		F96DA5972B5C211D00EFAD52 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		F96DA5992B5C216D00EFAD52 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		F96DA59B2B5C218700EFAD52 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		F96DA59D2B5C21B100EFAD52 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		F96DA5A12B5C249000EFAD52 /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
+		F96DA5A32B5C27FA00EFAD52 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F96DA5A72B5C57DA00EFAD52 /* MainAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppViewController.swift; sourceTree = "<group>"; };
+		F96DA5A92B5C627300EFAD52 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +81,15 @@
 				F96DA5872B5C0B0000EFAD52 /* Assets.xcassets */,
 				F96DA5892B5C0B0000EFAD52 /* LaunchScreen.storyboard */,
 				F96DA58C2B5C0B0000EFAD52 /* Info.plist */,
+				F96DA5952B5C20F100EFAD52 /* AlertService.swift */,
+				F96DA5972B5C211D00EFAD52 /* NetworkingService.swift */,
+				F96DA5992B5C216D00EFAD52 /* Message.swift */,
+				F96DA59B2B5C218700EFAD52 /* Login.swift */,
+				F96DA59D2B5C21B100EFAD52 /* ErrorResponse.swift */,
+				F96DA5A12B5C249000EFAD52 /* FormTextField.swift */,
+				F96DA5A32B5C27FA00EFAD52 /* LoginViewController.swift */,
+				F96DA5A72B5C57DA00EFAD52 /* MainAppViewController.swift */,
+				F96DA5A92B5C627300EFAD52 /* User.swift */,
 			);
 			path = RecyclingApp;
 			sourceTree = "<group>";
@@ -126,7 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F96DA58B2B5C0B0000EFAD52 /* LaunchScreen.storyboard in Resources */,
-				F96DA5882B5C0B0000EFAD52 /* Assets.xcassets in Resources */,
+				F96DA5922B5C134300EFAD52 /* Assets.xcassets in Resources */,
 				F96DA5862B5C0AFF00EFAD52 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +165,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F96DA5A82B5C57DA00EFAD52 /* MainAppViewController.swift in Sources */,
+				F96DA5962B5C20F100EFAD52 /* AlertService.swift in Sources */,
 				F96DA5832B5C0AFF00EFAD52 /* ViewController.swift in Sources */,
+				F96DA5982B5C211D00EFAD52 /* NetworkingService.swift in Sources */,
 				F96DA57F2B5C0AFF00EFAD52 /* AppDelegate.swift in Sources */,
 				F96DA5812B5C0AFF00EFAD52 /* SceneDelegate.swift in Sources */,
+				F96DA59E2B5C21B100EFAD52 /* ErrorResponse.swift in Sources */,
+				F96DA59A2B5C216D00EFAD52 /* Message.swift in Sources */,
+				F96DA5AA2B5C627300EFAD52 /* User.swift in Sources */,
+				F96DA59C2B5C218700EFAD52 /* Login.swift in Sources */,
+				F96DA5A42B5C27FA00EFAD52 /* LoginViewController.swift in Sources */,
+				F96DA5A22B5C249000EFAD52 /* FormTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
