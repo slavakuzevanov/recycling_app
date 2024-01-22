@@ -22,6 +22,9 @@
 		F96DA5A42B5C27FA00EFAD52 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5A32B5C27FA00EFAD52 /* LoginViewController.swift */; };
 		F96DA5A82B5C57DA00EFAD52 /* MainAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5A72B5C57DA00EFAD52 /* MainAppViewController.swift */; };
 		F96DA5AA2B5C627300EFAD52 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5A92B5C627300EFAD52 /* User.swift */; };
+		F96DA5AC2B5C706A00EFAD52 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5AB2B5C706A00EFAD52 /* CreateAccountViewController.swift */; };
+		F96DA5AE2B5C73EB00EFAD52 /* AccountSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5AD2B5C73EB00EFAD52 /* AccountSend.swift */; };
+		F96DA5B02B5C7D4300EFAD52 /* AccountRecieved.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5AF2B5C7D4300EFAD52 /* AccountRecieved.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		F96DA5A32B5C27FA00EFAD52 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F96DA5A72B5C57DA00EFAD52 /* MainAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppViewController.swift; sourceTree = "<group>"; };
 		F96DA5A92B5C627300EFAD52 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F96DA5AB2B5C706A00EFAD52 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		F96DA5AD2B5C73EB00EFAD52 /* AccountSend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSend.swift; sourceTree = "<group>"; };
+		F96DA5AF2B5C7D4300EFAD52 /* AccountRecieved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRecieved.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,9 @@
 				F96DA5A32B5C27FA00EFAD52 /* LoginViewController.swift */,
 				F96DA5A72B5C57DA00EFAD52 /* MainAppViewController.swift */,
 				F96DA5A92B5C627300EFAD52 /* User.swift */,
+				F96DA5AB2B5C706A00EFAD52 /* CreateAccountViewController.swift */,
+				F96DA5AD2B5C73EB00EFAD52 /* AccountSend.swift */,
+				F96DA5AF2B5C7D4300EFAD52 /* AccountRecieved.swift */,
 			);
 			path = RecyclingApp;
 			sourceTree = "<group>";
@@ -167,9 +176,11 @@
 			files = (
 				F96DA5A82B5C57DA00EFAD52 /* MainAppViewController.swift in Sources */,
 				F96DA5962B5C20F100EFAD52 /* AlertService.swift in Sources */,
+				F96DA5B02B5C7D4300EFAD52 /* AccountRecieved.swift in Sources */,
 				F96DA5832B5C0AFF00EFAD52 /* ViewController.swift in Sources */,
 				F96DA5982B5C211D00EFAD52 /* NetworkingService.swift in Sources */,
 				F96DA57F2B5C0AFF00EFAD52 /* AppDelegate.swift in Sources */,
+				F96DA5AC2B5C706A00EFAD52 /* CreateAccountViewController.swift in Sources */,
 				F96DA5812B5C0AFF00EFAD52 /* SceneDelegate.swift in Sources */,
 				F96DA59E2B5C21B100EFAD52 /* ErrorResponse.swift in Sources */,
 				F96DA59A2B5C216D00EFAD52 /* Message.swift in Sources */,
@@ -177,6 +188,7 @@
 				F96DA59C2B5C218700EFAD52 /* Login.swift in Sources */,
 				F96DA5A42B5C27FA00EFAD52 /* LoginViewController.swift in Sources */,
 				F96DA5A22B5C249000EFAD52 /* FormTextField.swift in Sources */,
+				F96DA5AE2B5C73EB00EFAD52 /* AccountSend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +340,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6L75R3N23R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecyclingApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -344,7 +357,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -355,6 +368,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6L75R3N23R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecyclingApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -371,7 +385,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

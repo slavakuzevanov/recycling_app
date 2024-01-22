@@ -65,7 +65,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbx-IN-qJJ" userLabel="Login button">
-                                <rect key="frame" x="98" y="567" width="197" height="39"/>
+                                <rect key="frame" x="98" y="461" width="197" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Login"/>
@@ -73,20 +73,20 @@
                                     <action selector="didTapLoginButton:" destination="tgq-r8-BjP" eventType="touchUpInside" id="uyj-AO-lKl"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TIw-pI-iKG" userLabel="Username Text Field" customClass="FormTextField" customModule="RecyclingApp" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TIw-pI-iKG" userLabel="Email Text Field" customClass="FormTextField" customModule="RecyclingApp" customModuleProvider="target">
                                 <rect key="frame" x="98" y="323" width="197" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tz3-cV-WGW" userLabel="Passworf Text Field" customClass="FormTextField" customModule="RecyclingApp" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tz3-cV-WGW" userLabel="Password Text Field" customClass="FormTextField" customModule="RecyclingApp" customModuleProvider="target">
                                 <rect key="frame" x="98" y="365" width="197" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLq-vx-CJm" userLabel="Create account button">
-                                <rect key="frame" x="98" y="614" width="197" height="39"/>
+                                <rect key="frame" x="98" y="508" width="197" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" name="AccentColor"/>
                                 <state key="normal" title="Button"/>
@@ -118,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZu-ZI-6QL" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1921.3740458015266" y="-369.0140845070423"/>
+            <point key="canvasLocation" x="1920" y="-373"/>
         </scene>
         <!--Main App View Controller-->
         <scene sceneID="xC4-jd-VfL">
@@ -152,16 +152,43 @@
         <!--Create Account View Controller-->
         <scene sceneID="cSS-D4-zQC">
             <objects>
-                <viewController id="SwX-IG-BKd" userLabel="Create Account View Controller" customClass="ViewController" customModule="RecyclingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SwX-IG-BKd" userLabel="Create Account View Controller" customClass="CreateAccountViewController" customModule="RecyclingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p05-VK-uEu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q1p-i2-HEl" userLabel="Email Text Field" customClass="FormTextField" customModule="RecyclingApp" customModuleProvider="target">
+                                <rect key="frame" x="98" y="261" width="197" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6aQ-Kn-HCL" userLabel="Name Text Field" customClass="FormTextField" customModule="RecyclingApp" customModuleProvider="target">
+                                <rect key="frame" x="98" y="303" width="197" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B3W-dS-uCa" userLabel="Password Text Field" customClass="FormTextField" customModule="RecyclingApp" customModuleProvider="target">
+                                <rect key="frame" x="98" y="345" width="197" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="woR-vP-p0a" userLabel="Password Confirmation Text Field" customClass="FormTextField" customModule="RecyclingApp" customModuleProvider="target">
+                                <rect key="frame" x="98" y="387" width="197" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAa-h0-a5M" userLabel="Create account button">
-                                <rect key="frame" x="98" y="567" width="197" height="39"/>
+                                <rect key="frame" x="98" y="445" width="197" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Create account"/>
+                                <connections>
+                                    <action selector="didTapCreateAccountButton:" destination="SwX-IG-BKd" eventType="touchUpInside" id="Lxz-oh-79U"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HbO-UY-dEy"/>
@@ -169,10 +196,17 @@
                         <color key="tintColor" systemColor="systemGreenColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="EUf-fN-aiu"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="Q1p-i2-HEl" id="pnq-uL-Ebd"/>
+                        <outlet property="nameTextField" destination="6aQ-Kn-HCL" id="wvw-oP-Eat"/>
+                        <outlet property="passwordConfTextField" destination="woR-vP-p0a" id="UuR-LD-A1v"/>
+                        <outlet property="passwordTextField" destination="B3W-dS-uCa" id="ee7-uY-Rkl"/>
+                        <segue destination="95m-0J-MLB" kind="show" identifier="createAccountSeque" id="oED-hD-g72"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kN2-QL-vOL" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1921.3740458015266" y="433.80281690140845"/>
+            <point key="canvasLocation" x="1920" y="318"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fiq-B2-oV8">
@@ -195,17 +229,18 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="7Wa-S2-e5f"/>
+        <segue reference="4hy-yI-Tec"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemGreenColor"/>
     <resources>
         <namedColor name="AccentColor">
-            <color red="0.60649485839976991" green="1" blue="0.59185560402725834" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.60600000619888306" green="1" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
