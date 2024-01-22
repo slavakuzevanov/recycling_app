@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F9018CFE2B5EBE8D00FF71B9 /* UIColor_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9018CFD2B5EBE8D00FF71B9 /* UIColor_extension.swift */; };
 		F96DA57F2B5C0AFF00EFAD52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA57E2B5C0AFF00EFAD52 /* AppDelegate.swift */; };
 		F96DA5812B5C0AFF00EFAD52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5802B5C0AFF00EFAD52 /* SceneDelegate.swift */; };
 		F96DA5832B5C0AFF00EFAD52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5822B5C0AFF00EFAD52 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F9018CFD2B5EBE8D00FF71B9 /* UIColor_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_extension.swift; sourceTree = "<group>"; };
 		F96DA57B2B5C0AFF00EFAD52 /* RecyclingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecyclingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96DA57E2B5C0AFF00EFAD52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F96DA5802B5C0AFF00EFAD52 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				F96DA5AB2B5C706A00EFAD52 /* CreateAccountViewController.swift */,
 				F96DA5AD2B5C73EB00EFAD52 /* AccountSend.swift */,
 				F96DA5AF2B5C7D4300EFAD52 /* AccountRecieved.swift */,
+				F9018CFD2B5EBE8D00FF71B9 /* UIColor_extension.swift */,
 			);
 			path = RecyclingApp;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				F96DA59E2B5C21B100EFAD52 /* ErrorResponse.swift in Sources */,
 				F96DA59A2B5C216D00EFAD52 /* Message.swift in Sources */,
 				F96DA5AA2B5C627300EFAD52 /* User.swift in Sources */,
+				F9018CFE2B5EBE8D00FF71B9 /* UIColor_extension.swift in Sources */,
 				F96DA59C2B5C218700EFAD52 /* Login.swift in Sources */,
 				F96DA5A42B5C27FA00EFAD52 /* LoginViewController.swift in Sources */,
 				F96DA5A22B5C249000EFAD52 /* FormTextField.swift in Sources */,

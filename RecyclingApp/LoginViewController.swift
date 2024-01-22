@@ -19,7 +19,28 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        emailTextField.addTarget(self, action: #selector(LoginViewController.textFieldDidChange(_:)), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(LoginViewController.textFieldDidChange(_:)), for: .editingChanged)
     }
+    
+    @objc func textFieldDidChange(_ textField: FormTextField) {
+            if (textField.text!.isEmpty)
+            {
+                // change your textfield border color
+                print("строка пустая")
+                let color = UIColor(rgb: 0xe85e56).cgColor
+                textField.layer.borderColor = color
+                textField.layer.borderWidth = 1
+                textField.layer.cornerRadius = 5
+            }
+            else
+            {
+                // remove text field border or change color
+                print("строка не пустая")
+                textField.layer.borderWidth = 0
+            }
+        }
+    
     
     @IBAction func didTapLoginButton(_ sender: Any) {
         guard
@@ -28,7 +49,23 @@ class LoginViewController: UIViewController {
             else { return }
         
 //        formDataRequest(email: email, password: password)
-        jsonRequest(email: email, password: password)
+//        jsonRequest(email: email, password: password)
+        
+        if !email.isEmpty && !password.isEmpty {
+            jsonRequest(email: email, password: password)
+        } else {
+            if email.isEmpty {
+                let color = UIColor(rgb: 0xe85e56).cgColor
+                emailTextField.layer.borderColor = color
+                emailTextField.layer.borderWidth = 1
+                emailTextField.layer.cornerRadius = 5
+            } else {
+                let color = UIColor(rgb: 0xe85e56).cgColor
+                passwordTextField.layer.borderColor = color
+                passwordTextField.layer.borderWidth = 1
+                passwordTextField.layer.cornerRadius = 5
+            }
+        }
         
     }
     
