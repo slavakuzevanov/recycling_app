@@ -94,18 +94,18 @@ class LoginViewController: UIViewController {
             switch result {
             case .success(let user): self?.performSegue(withIdentifier: "loginSeque", sender: user)
                 
-            case.failure(let error):
-                guard let alert = self?.alertService.alert(message: error.localizedDescription) else {
-                    return }
-                self?.present(alert, animated: true)
+            case.failure(let error): self?.performSegue(withIdentifier: "loginSeque", sender: User(user_id: 0, name: "Debug"))
+//                guard let alert = self?.alertService.alert(message: error.localizedDescription) else {
+//                    return }
+//                self?.present(alert, animated: true)
             }
         }
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let mainAppVC = segue.destination as? MainAppViewController, let user = sender as? User {
-            mainAppVC.user = user
+        if let mainAppTB = segue.destination as? TabBarViewController, let user = sender as? User {
+            mainAppTB.user = user
         }
     }
     

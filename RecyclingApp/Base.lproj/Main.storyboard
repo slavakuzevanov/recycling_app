@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="91p-2g-BAd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="91p-2g-BAd">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -160,41 +161,35 @@
                     <connections>
                         <outlet property="emailTextField" destination="TIw-pI-iKG" id="KtV-CY-Gto"/>
                         <outlet property="passwordTextField" destination="tz3-cV-WGW" id="YC9-SF-Ewy"/>
-                        <segue destination="95m-0J-MLB" kind="show" identifier="loginSeque" id="4hy-yI-Tec"/>
+                        <segue destination="E0I-RJ-7cg" kind="show" identifier="loginSeque" id="kjI-j6-SSG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZu-ZI-6QL" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1919.8473282442746" y="-373.23943661971833"/>
         </scene>
-        <!--Main App View Controller-->
-        <scene sceneID="xC4-jd-VfL">
+        <!--Tab Bar View Controller-->
+        <scene sceneID="Wjz-Y0-j87">
             <objects>
-                <viewController id="95m-0J-MLB" userLabel="Main App View Controller" customClass="MainAppViewController" customModule="RecyclingApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Tm9-Y8-siJ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome, user's name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncV-8d-R2x">
-                                <rect key="frame" x="39" y="234" width="315" height="214"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                <color key="textColor" red="0.48627450979999998" green="0.58823529409999997" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="HMo-1F-Vqz"/>
-                        <color key="backgroundColor" red="0.60297268629074097" green="0.70907634496688843" blue="0.41768282651901245" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" systemColor="systemGreenColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="rMN-H5-dHD"/>
+                <tabBarController id="E0I-RJ-7cg" customClass="TabBarViewController" customModule="RecyclingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="DoX-AX-6Vf"/>
+                    <tabBar key="tabBar" alpha="0.59999999999999998" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionIndicatorImage="map" id="vK3-6M-gU4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.48627450979999998" green="0.58823529409999997" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.20784313730000001" green="0.34901960780000002" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.20784313730000001" green="0.34901960780000002" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" red="0.93725490199999995" green="0.69411764710000001" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBar>
                     <connections>
-                        <outlet property="label" destination="ncV-8d-R2x" id="kHz-BG-4UJ"/>
+                        <segue destination="edC-1D-FtG" kind="relationship" relationship="viewControllers" id="v0W-3S-xId"/>
+                        <segue destination="jha-dX-4Cz" kind="relationship" relationship="viewControllers" id="YxF-VY-0p3"/>
+                        <segue destination="EwS-7v-HSm" kind="relationship" relationship="viewControllers" id="bD9-eu-Jh6"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qSV-HB-kwb" sceneMemberID="firstResponder"/>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z3v-eG-kDv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3026.7175572519081" y="-12.67605633802817"/>
+            <point key="canvasLocation" x="3879" y="-2"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="cSS-D4-zQC">
@@ -292,7 +287,7 @@
                         <outlet property="nameTextField" destination="6aQ-Kn-HCL" id="wvw-oP-Eat"/>
                         <outlet property="passwordConfTextField" destination="woR-vP-p0a" id="UuR-LD-A1v"/>
                         <outlet property="passwordTextField" destination="B3W-dS-uCa" id="ee7-uY-Rkl"/>
-                        <segue destination="95m-0J-MLB" kind="show" identifier="createAccountSeque" id="oED-hD-g72"/>
+                        <segue destination="E0I-RJ-7cg" kind="show" identifier="mainScreenSeque" id="Uuu-1n-dFJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kN2-QL-vOL" sceneMemberID="firstResponder"/>
@@ -317,19 +312,155 @@
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="AdM-qu-2Fz">
+            <objects>
+                <navigationController id="edC-1D-FtG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="nGW-u8-Leg">
+                        <imageReference key="image" image="house" catalog="system" symbolScale="medium"/>
+                        <color key="badgeColor" red="0.93725490199999995" green="0.69411764710000001" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <imageReference key="selectedImage" image="house.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qAO-uC-XHa">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XLE-yv-dtk" kind="relationship" relationship="rootViewController" id="iDJ-82-hQI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9gs-HU-Kam" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4781" y="-686"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="1d7-k7-a75">
+            <objects>
+                <viewController id="XLE-yv-dtk" customClass="ProfileViewController" customModule="RecyclingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GGU-um-81t">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome, user name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IV5-9H-IzM">
+                                <rect key="frame" x="1" y="175" width="392" height="242"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" red="0.48627450979999998" green="0.58823529409999997" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0YE-7l-YnH"/>
+                        <color key="backgroundColor" red="0.62352941179999999" green="0.70588235290000001" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aAG-cs-IIM"/>
+                    <connections>
+                        <outlet property="label" destination="IV5-9H-IzM" id="sOZ-ku-bAA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z0a-gw-CsO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5683" y="-686"/>
+        </scene>
+        <!--Camera-->
+        <scene sceneID="7am-jR-n1G">
+            <objects>
+                <navigationController id="jha-dX-4Cz" userLabel="Camera" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Camera" springLoaded="YES" id="tEN-ZA-gED">
+                        <imageReference key="image" image="camera.viewfinder" catalog="system" symbolScale="medium"/>
+                        <color key="badgeColor" red="0.93725490199999995" green="0.69411764710000001" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <imageReference key="selectedImage" image="camera.viewfinder" catalog="system" symbolScale="large"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="inX-ag-QJb">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="4C1-4s-tv3" kind="relationship" relationship="rootViewController" id="DRB-20-oFI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RjY-eY-z9f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4781" y="27"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="pCx-V9-LQA">
+            <objects>
+                <viewController id="4C1-4s-tv3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mc7-Y2-qvl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="EgI-xi-NNA"/>
+                        <color key="backgroundColor" red="0.62352941179999999" green="0.70588235290000001" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wgb-Id-HGL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QhJ-nU-EAj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5682" y="27"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="jrQ-Cy-oah">
+            <objects>
+                <navigationController id="EwS-7v-HSm" userLabel="Map" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" id="5Bm-kg-JOx">
+                        <imageReference key="image" image="map" catalog="system" symbolScale="medium"/>
+                        <color key="badgeColor" red="0.93725490199999995" green="0.69411764710000001" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <imageReference key="selectedImage" image="map.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AUr-NR-7Zr">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fVy-Yk-gyU" kind="relationship" relationship="rootViewController" id="hGz-sS-uQC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eR0-a2-6o4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4781" y="763"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="0DQ-oq-F6w">
+            <objects>
+                <viewController id="fVy-Yk-gyU" customClass="MapViewController" customModule="RecyclingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pGN-hU-uYE" customClass="BaseMapView" customModule="RecyclingApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="WGk-SU-VxQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Cj3-LB-BoX"/>
+                    <connections>
+                        <outlet property="baseMapView" destination="pGN-hU-uYE" id="uJv-Sn-ZFZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mtl-jW-TqT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5682" y="763"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Tup-zA-3Kz"/>
-        <segue reference="4hy-yI-Tec"/>
+        <segue reference="7Wa-S2-e5f"/>
+        <segue reference="kjI-j6-SSG"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.20784313725490194" green="0.34901960784313724" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+    <color key="tintColor" red="0.20784313730000001" green="0.34901960780000002" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
         <image name="Logo" width="512" height="512"/>
+        <image name="camera.viewfinder" catalog="system" width="128" height="115"/>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="map" catalog="system" width="128" height="112"/>
+        <image name="map" width="128" height="128"/>
+        <image name="map.fill" catalog="system" width="128" height="110"/>
         <namedColor name="AccentColor">
             <color red="0.60600000619888306" green="1" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

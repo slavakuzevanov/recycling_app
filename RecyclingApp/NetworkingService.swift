@@ -15,7 +15,7 @@ enum MyResult<T, E: Error> {
 
 class NetworkingService {
     
-    let baseUrl = "https://recycling-app-backend-5f0fc7902901.herokuapp.com/api"
+    let baseUrl = "http://127.0.0.1:5000/api"
     
     func handleResponse(for request: URLRequest, 
                         completion: @escaping (Result<User, Error>) -> Void){

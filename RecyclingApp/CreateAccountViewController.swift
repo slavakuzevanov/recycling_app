@@ -102,7 +102,7 @@ class CreateAccountViewController: UIViewController {
         
         networkingService.request(endpoint: "/new_user", accountObject: account, method: "POST") { [weak self] (result) in
             switch result {
-            case .success(let account): self?.performSegue(withIdentifier: "createAccountSeque", sender: account)
+            case .success(let account): self?.performSegue(withIdentifier: "mainScreenSeque", sender: account)
                 
             case.failure(let error):
                 guard let alert = self?.alertService.alert(message: error.localizedDescription) else {
@@ -113,8 +113,8 @@ class CreateAccountViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let mainAppVC = segue.destination as? MainAppViewController, let account = sender as? AccountRecieved {
-            mainAppVC.account = account
+        if let mainAppTB = segue.destination as? TabBarViewController, let account = sender as? AccountRecieved {
+            mainAppTB.account = account
         }
     }
     

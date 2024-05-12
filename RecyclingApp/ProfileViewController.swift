@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainAppViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
     
     @IBOutlet weak var label: UILabel!
@@ -17,13 +17,16 @@ class MainAppViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(user as Any)
+        print(account as Any)
 
         if let name = user?.name {
-            
+            print("View Controller user ", name)
             label.text = "Welcome, \(name.capitalized)"
         }
         if let name = account?.name {
-            
+            print("View Controller account ", name)
             label.text = "Welcome, \(name.capitalized)"
         }
     }
