@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="91p-2g-BAd">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -173,7 +173,7 @@
             <objects>
                 <tabBarController id="E0I-RJ-7cg" customClass="TabBarViewController" customModule="RecyclingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="DoX-AX-6Vf"/>
-                    <tabBar key="tabBar" alpha="0.59999999999999998" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionIndicatorImage="map" id="vK3-6M-gU4">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionIndicatorImage="map" id="vK3-6M-gU4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.48627450979999998" green="0.58823529409999997" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -413,7 +413,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="fVy-Yk-gyU" kind="relationship" relationship="rootViewController" id="hGz-sS-uQC"/>
+                        <segue destination="sVW-Vx-IZU" kind="relationship" relationship="rootViewController" id="c1y-4r-DYO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eR0-a2-6o4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -421,23 +421,30 @@
             <point key="canvasLocation" x="4781" y="763"/>
         </scene>
         <!--Map View Controller-->
-        <scene sceneID="0DQ-oq-F6w">
+        <scene sceneID="cwc-wY-fBZ">
             <objects>
-                <viewController id="fVy-Yk-gyU" customClass="MapViewController" customModule="RecyclingApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pGN-hU-uYE" customClass="BaseMapView" customModule="RecyclingApp" customModuleProvider="target">
+                <viewController id="sVW-Vx-IZU" customClass="MapViewController" customModule="RecyclingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bYz-cn-rPq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="WGk-SU-VxQ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ncn-wx-E4G" customClass="YMKMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="69o-Hm-gaU"/>
+                        <color key="backgroundColor" red="0.62352941179999999" green="0.70588235290000001" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Cj3-LB-BoX"/>
+                    <navigationItem key="navigationItem" id="Wmi-bQ-UuK"/>
                     <connections>
-                        <outlet property="baseMapView" destination="pGN-hU-uYE" id="uJv-Sn-ZFZ"/>
+                        <outlet property="mapView" destination="Ncn-wx-E4G" id="B0T-Gt-rga"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mtl-jW-TqT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7sa-cZ-uZX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5682" y="763"/>
+            <point key="canvasLocation" x="5681.679389312977" y="762.67605633802816"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -450,8 +457,8 @@
         <image name="camera.viewfinder" catalog="system" width="128" height="115"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
-        <image name="map" catalog="system" width="128" height="112"/>
         <image name="map" width="128" height="128"/>
+        <image name="map" catalog="system" width="128" height="112"/>
         <image name="map.fill" catalog="system" width="128" height="110"/>
         <namedColor name="AccentColor">
             <color red="0.60600000619888306" green="1" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

@@ -27,10 +27,7 @@
 		F96DA5AC2B5C706A00EFAD52 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5AB2B5C706A00EFAD52 /* CreateAccountViewController.swift */; };
 		F96DA5AE2B5C73EB00EFAD52 /* AccountSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5AD2B5C73EB00EFAD52 /* AccountSend.swift */; };
 		F96DA5B02B5C7D4300EFAD52 /* AccountRecieved.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5AF2B5C7D4300EFAD52 /* AccountRecieved.swift */; };
-		F97A09092BF133BE001B0D2A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97A09082BF133BE001B0D2A /* MapViewController.swift */; };
-		F97A090B2BF133FA001B0D2A /* BaseMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97A090A2BF133FA001B0D2A /* BaseMapView.swift */; };
-		F97A090D2BF13429001B0D2A /* BaseMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97A090C2BF13429001B0D2A /* BaseMapView.xib */; };
-		F97A090F2BF1350B001B0D2A /* BaseMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97A090E2BF1350B001B0D2A /* BaseMapViewController.swift */; };
+		F9D27A2C2BF8D38F0020B6E9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D27A2B2BF8D38F0020B6E9 /* MapViewController.swift */; };
 		F9F814DC2BEF98AF00E9DE48 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F814DB2BEF98AF00E9DE48 /* TabBarViewController.swift */; };
 		F9F814DE2BEF9F4D00E9DE48 /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F814DD2BEF9F4D00E9DE48 /* ProfileNavigationController.swift */; };
 /* End PBXBuildFile section */
@@ -60,10 +57,7 @@
 		F96DA5AB2B5C706A00EFAD52 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		F96DA5AD2B5C73EB00EFAD52 /* AccountSend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSend.swift; sourceTree = "<group>"; };
 		F96DA5AF2B5C7D4300EFAD52 /* AccountRecieved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRecieved.swift; sourceTree = "<group>"; };
-		F97A09082BF133BE001B0D2A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		F97A090A2BF133FA001B0D2A /* BaseMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMapView.swift; sourceTree = "<group>"; };
-		F97A090C2BF13429001B0D2A /* BaseMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseMapView.xib; sourceTree = "<group>"; };
-		F97A090E2BF1350B001B0D2A /* BaseMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMapViewController.swift; sourceTree = "<group>"; };
+		F9D27A2B2BF8D38F0020B6E9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F9F814DB2BEF98AF00E9DE48 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F9F814DD2BEF9F4D00E9DE48 /* ProfileNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,10 +134,7 @@
 				F9018CFD2B5EBE8D00FF71B9 /* UIColor_extension.swift */,
 				F9F814DB2BEF98AF00E9DE48 /* TabBarViewController.swift */,
 				F9F814DD2BEF9F4D00E9DE48 /* ProfileNavigationController.swift */,
-				F97A09082BF133BE001B0D2A /* MapViewController.swift */,
-				F97A090A2BF133FA001B0D2A /* BaseMapView.swift */,
-				F97A090C2BF13429001B0D2A /* BaseMapView.xib */,
-				F97A090E2BF1350B001B0D2A /* BaseMapViewController.swift */,
+				F9D27A2B2BF8D38F0020B6E9 /* MapViewController.swift */,
 			);
 			path = RecyclingApp;
 			sourceTree = "<group>";
@@ -208,7 +199,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F97A090D2BF13429001B0D2A /* BaseMapView.xib in Resources */,
 				F96DA58B2B5C0B0000EFAD52 /* LaunchScreen.storyboard in Resources */,
 				F96DA5922B5C134300EFAD52 /* Assets.xcassets in Resources */,
 				F96DA5862B5C0AFF00EFAD52 /* Main.storyboard in Resources */,
@@ -264,8 +254,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F97A090F2BF1350B001B0D2A /* BaseMapViewController.swift in Sources */,
-				F97A090B2BF133FA001B0D2A /* BaseMapView.swift in Sources */,
 				F96DA5A82B5C57DA00EFAD52 /* ProfileViewController.swift in Sources */,
 				F96DA5962B5C20F100EFAD52 /* AlertService.swift in Sources */,
 				F96DA5B02B5C7D4300EFAD52 /* AccountRecieved.swift in Sources */,
@@ -273,7 +261,7 @@
 				F96DA5982B5C211D00EFAD52 /* NetworkingService.swift in Sources */,
 				F96DA57F2B5C0AFF00EFAD52 /* AppDelegate.swift in Sources */,
 				F96DA5AC2B5C706A00EFAD52 /* CreateAccountViewController.swift in Sources */,
-				F97A09092BF133BE001B0D2A /* MapViewController.swift in Sources */,
+				F9D27A2C2BF8D38F0020B6E9 /* MapViewController.swift in Sources */,
 				F9F814DE2BEF9F4D00E9DE48 /* ProfileNavigationController.swift in Sources */,
 				F96DA5812B5C0AFF00EFAD52 /* SceneDelegate.swift in Sources */,
 				F96DA59E2B5C21B100EFAD52 /* ErrorResponse.swift in Sources */,
@@ -362,7 +350,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -419,7 +407,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
