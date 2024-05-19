@@ -15,8 +15,9 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener, CLLoca
     // Подключаем IBOutlet для YMKMapView
 
     var userLocationLayer: YMKUserLocationLayer!
-    var locationManager: CLLocationManager!
+    var cllocationManager: CLLocationManager!
     var isFirstLocationUpdate = true
+    private var locationManager: YMKLocationManager?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +34,9 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener, CLLoca
 //        )
 
         // Настройка CLLocationManager для запроса разрешения на использование геолокации
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization() // Запрос разрешения на использование геолокации
+        cllocationManager = CLLocationManager()
+        cllocationManager.delegate = self
+        cllocationManager.requestWhenInUseAuthorization() // Запрос разрешения на использование геолокации
     }
 
     // CLLocationManagerDelegate методы
@@ -62,8 +63,39 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener, CLLoca
 
     // YMKUserLocationObjectListener методы
     func onObjectAdded(with view: YMKUserLocationView) {
-        view.pin.setIconWith(UIImage(named: "SearchResult")!)
-        view.arrow.setIconWith(UIImage(named: "UserArrow")!)
+        
+        guard let mapWindow = mapView.mapWindow else {
+                return
+            }
+        
+        let currentZoom = mapWindow.map.cameraPosition.zoom
+        
+        // Установка масштаба пина в зависимости от текущего масштаба карты
+        let pinScale = NSNumber(value: Double(currentZoom) / 10.0) // Примерное соотношение масштаба пина и масштаба карты
+
+        
+        view.pin.setIconWith(UIImage(named: "Arrow")!)
+        view.pin.setIconStyleWith(YMKIconStyle(
+            anchor: CGPoint(x: 0.5, y: 0.5) as NSValue,
+            rotationType: YMKRotationType.rotate.rawValue as NSNumber,
+            zIndex: 0,
+            flat: false,
+            visible: true,
+            scale: 0.15,
+            tappableArea: nil))
+        view.pin.direction = 90
+        
+//        view.arrow.setIconWith(UIImage(named: "Arrow")!)
+//        
+//        view.arrow.setIconStyleWith(YMKIconStyle(
+//            anchor: CGPoint(x: 0.0, y: 0.0) as NSValue,
+//            rotationType: 1,
+//            zIndex: 0,
+//            flat: false,
+//            visible: true,
+//            scale: 0.1,
+//            tappableArea: nil))
+//        view.arrow.direction = 180
         view.accuracyCircle.fillColor = UIColor(
                                                 red: 30.0 / 255,
                                                 green: 70.0 / 255,

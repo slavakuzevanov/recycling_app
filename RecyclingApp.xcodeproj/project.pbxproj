@@ -27,6 +27,14 @@
 		F96DA5AC2B5C706A00EFAD52 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5AB2B5C706A00EFAD52 /* CreateAccountViewController.swift */; };
 		F96DA5AE2B5C73EB00EFAD52 /* AccountSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5AD2B5C73EB00EFAD52 /* AccountSend.swift */; };
 		F96DA5B02B5C7D4300EFAD52 /* AccountRecieved.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5AF2B5C7D4300EFAD52 /* AccountRecieved.swift */; };
+		F9B8D7022BF93DAF000C6192 /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9B8D7012BF93DAF000C6192 /* MainApp.storyboard */; };
+		F9B8D7042BF946A0000C6192 /* UINavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B8D7032BF946A0000C6192 /* UINavViewController.swift */; };
+		F9B8D7072BF9495A000C6192 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B8D7062BF9495A000C6192 /* UserDefaults+Extension.swift */; };
+		F9B8D70A2BF9566D000C6192 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B8D7092BF9566D000C6192 /* MainApp.swift */; };
+		F9B8D70C2BF957E3000C6192 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B8D70B2BF957E3000C6192 /* CustomTabBar.swift */; };
+		F9B8D70E2BF962EA000C6192 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B8D70D2BF962EA000C6192 /* TabCurve.swift */; };
+		F9B8D7102BF9786C000C6192 /* TabBarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B8D70F2BF9786C000C6192 /* TabBarState.swift */; };
+		F9B8D7122BF9869D000C6192 /* TabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B8D7112BF9869D000C6192 /* TabBarDelegate.swift */; };
 		F9D27A2C2BF8D38F0020B6E9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D27A2B2BF8D38F0020B6E9 /* MapViewController.swift */; };
 		F9F814DC2BEF98AF00E9DE48 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F814DB2BEF98AF00E9DE48 /* TabBarViewController.swift */; };
 		F9F814DE2BEF9F4D00E9DE48 /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F814DD2BEF9F4D00E9DE48 /* ProfileNavigationController.swift */; };
@@ -57,6 +65,14 @@
 		F96DA5AB2B5C706A00EFAD52 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		F96DA5AD2B5C73EB00EFAD52 /* AccountSend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSend.swift; sourceTree = "<group>"; };
 		F96DA5AF2B5C7D4300EFAD52 /* AccountRecieved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRecieved.swift; sourceTree = "<group>"; };
+		F9B8D7012BF93DAF000C6192 /* MainApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainApp.storyboard; sourceTree = "<group>"; };
+		F9B8D7032BF946A0000C6192 /* UINavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavViewController.swift; sourceTree = "<group>"; };
+		F9B8D7062BF9495A000C6192 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		F9B8D7092BF9566D000C6192 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
+		F9B8D70B2BF957E3000C6192 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		F9B8D70D2BF962EA000C6192 /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
+		F9B8D70F2BF9786C000C6192 /* TabBarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarState.swift; sourceTree = "<group>"; };
+		F9B8D7112BF9869D000C6192 /* TabBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarDelegate.swift; sourceTree = "<group>"; };
 		F9D27A2B2BF8D38F0020B6E9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F9F814DB2BEF98AF00E9DE48 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F9F814DD2BEF9F4D00E9DE48 /* ProfileNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
@@ -112,8 +128,11 @@
 		F96DA57D2B5C0AFF00EFAD52 /* RecyclingApp */ = {
 			isa = PBXGroup;
 			children = (
+				F9B8D7082BF95637000C6192 /* CustomTabBar */,
+				F9B8D7052BF9492B000C6192 /* Extensions */,
 				F96DA57E2B5C0AFF00EFAD52 /* AppDelegate.swift */,
 				F96DA5802B5C0AFF00EFAD52 /* SceneDelegate.swift */,
+				F9B8D7032BF946A0000C6192 /* UINavViewController.swift */,
 				F96DA5822B5C0AFF00EFAD52 /* ViewController.swift */,
 				F96DA5842B5C0AFF00EFAD52 /* Main.storyboard */,
 				F96DA5872B5C0B0000EFAD52 /* Assets.xcassets */,
@@ -135,8 +154,29 @@
 				F9F814DB2BEF98AF00E9DE48 /* TabBarViewController.swift */,
 				F9F814DD2BEF9F4D00E9DE48 /* ProfileNavigationController.swift */,
 				F9D27A2B2BF8D38F0020B6E9 /* MapViewController.swift */,
+				F9B8D7012BF93DAF000C6192 /* MainApp.storyboard */,
 			);
 			path = RecyclingApp;
+			sourceTree = "<group>";
+		};
+		F9B8D7052BF9492B000C6192 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F9B8D7062BF9495A000C6192 /* UserDefaults+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F9B8D7082BF95637000C6192 /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F9B8D7092BF9566D000C6192 /* MainApp.swift */,
+				F9B8D70B2BF957E3000C6192 /* CustomTabBar.swift */,
+				F9B8D70D2BF962EA000C6192 /* TabCurve.swift */,
+				F9B8D70F2BF9786C000C6192 /* TabBarState.swift */,
+				F9B8D7112BF9869D000C6192 /* TabBarDelegate.swift */,
+			);
+			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +242,7 @@
 				F96DA58B2B5C0B0000EFAD52 /* LaunchScreen.storyboard in Resources */,
 				F96DA5922B5C134300EFAD52 /* Assets.xcassets in Resources */,
 				F96DA5862B5C0AFF00EFAD52 /* Main.storyboard in Resources */,
+				F9B8D7022BF93DAF000C6192 /* MainApp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +299,9 @@
 				F96DA5962B5C20F100EFAD52 /* AlertService.swift in Sources */,
 				F96DA5B02B5C7D4300EFAD52 /* AccountRecieved.swift in Sources */,
 				F96DA5832B5C0AFF00EFAD52 /* ViewController.swift in Sources */,
+				F9B8D7122BF9869D000C6192 /* TabBarDelegate.swift in Sources */,
 				F96DA5982B5C211D00EFAD52 /* NetworkingService.swift in Sources */,
+				F9B8D70C2BF957E3000C6192 /* CustomTabBar.swift in Sources */,
 				F96DA57F2B5C0AFF00EFAD52 /* AppDelegate.swift in Sources */,
 				F96DA5AC2B5C706A00EFAD52 /* CreateAccountViewController.swift in Sources */,
 				F9D27A2C2BF8D38F0020B6E9 /* MapViewController.swift in Sources */,
@@ -266,12 +309,17 @@
 				F96DA5812B5C0AFF00EFAD52 /* SceneDelegate.swift in Sources */,
 				F96DA59E2B5C21B100EFAD52 /* ErrorResponse.swift in Sources */,
 				F9F814DC2BEF98AF00E9DE48 /* TabBarViewController.swift in Sources */,
+				F9B8D70E2BF962EA000C6192 /* TabCurve.swift in Sources */,
 				F96DA59A2B5C216D00EFAD52 /* Message.swift in Sources */,
+				F9B8D7072BF9495A000C6192 /* UserDefaults+Extension.swift in Sources */,
+				F9B8D70A2BF9566D000C6192 /* MainApp.swift in Sources */,
 				F96DA5AA2B5C627300EFAD52 /* User.swift in Sources */,
+				F9B8D7042BF946A0000C6192 /* UINavViewController.swift in Sources */,
 				F9018CFE2B5EBE8D00FF71B9 /* UIColor_extension.swift in Sources */,
 				F96DA59C2B5C218700EFAD52 /* Login.swift in Sources */,
 				F96DA5A42B5C27FA00EFAD52 /* LoginViewController.swift in Sources */,
 				F96DA5A22B5C249000EFAD52 /* FormTextField.swift in Sources */,
+				F9B8D7102BF9786C000C6192 /* TabBarState.swift in Sources */,
 				F96DA5AE2B5C73EB00EFAD52 /* AccountSend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

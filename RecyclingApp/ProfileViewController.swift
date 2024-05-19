@@ -18,16 +18,21 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(user as Any)
-        print(account as Any)
+        print("Profile view ", user as Any)
+        print("Profile view ", account as Any)
+        
+        if UserDefaults.standard.hasLogged {
+            label.text = "Welcome, \(UserDefaults.standard.hasName.capitalized)"
+        } else {
+            if let name = user?.name {
+                print("View Controller user ", name)
+                label.text = "Welcome, \(name.capitalized)"
+            }
+            if let name = account?.name {
+                print("View Controller account ", name)
+                label.text = "Welcome, \(name.capitalized)"
+            }
+        }
 
-        if let name = user?.name {
-            print("View Controller user ", name)
-            label.text = "Welcome, \(name.capitalized)"
-        }
-        if let name = account?.name {
-            print("View Controller account ", name)
-            label.text = "Welcome, \(name.capitalized)"
-        }
     }
 }
