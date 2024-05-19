@@ -68,12 +68,6 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener, CLLoca
                 return
             }
         
-        let currentZoom = mapWindow.map.cameraPosition.zoom
-        
-        // Установка масштаба пина в зависимости от текущего масштаба карты
-        let pinScale = NSNumber(value: Double(currentZoom) / 10.0) // Примерное соотношение масштаба пина и масштаба карты
-
-        
         view.pin.setIconWith(UIImage(named: "Arrow")!)
         view.pin.setIconStyleWith(YMKIconStyle(
             anchor: CGPoint(x: 0.5, y: 0.5) as NSValue,

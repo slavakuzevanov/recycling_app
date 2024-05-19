@@ -15,7 +15,7 @@ enum MyResult<T, E: Error> {
 
 class NetworkingService {
     
-    let baseUrl = "http://127.0.0.1:5000/api"
+    let baseUrl = "http://127.0.0.1:8080/api"
     
     func handleResponse(for request: URLRequest, 
                         completion: @escaping (Result<User, Error>) -> Void){

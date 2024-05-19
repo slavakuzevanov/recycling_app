@@ -19,6 +19,8 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.isHidden = true
+        // Скрыть навигационный бар
+        navigationController?.setNavigationBarHidden(true, animated: false)
 
         if let name = user?.name {
             print("user ", name)
@@ -32,7 +34,7 @@ class TabBarViewController: UITabBarController {
         
         print("TabBarViewController код здесь")
         print("UserId: ", UserDefaults.standard.integer(forKey: "UserId"))
-        print("UserName: ", UserDefaults.standard.string(forKey: "UserName")!)
+        print("UserName: ", UserDefaults.standard.string(forKey: "UserName") as Any)
         // Здесь прямо получаю view controller, который является первым ребенком navigation controller'a (0 view controller таб бара)
         let profileVC = self.viewControllers![0].children[0] as! ProfileViewController
         profileVC.user = user

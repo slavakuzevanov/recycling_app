@@ -48,10 +48,14 @@ class LoginViewController: UIViewController {
             let password = passwordTextField.text
             else { return }
         
+        print(email)
+        print(password)
+        
 //        formDataRequest(email: email, password: password)
 //        jsonRequest(email: email, password: password)
         
         if !email.isEmpty && !password.isEmpty {
+            print("Выполняю jsonRequest")
             jsonRequest(email: email, password: password)
         } else {
             if email.isEmpty {
@@ -91,21 +95,25 @@ class LoginViewController: UIViewController {
         let login = Login(email: email, password: password)
         
         networkingService.request(endpoint: "/login", loginObject: login, method: "POST") { [weak self] (result) in
+            print("jsonRequest result ", result)
             switch result {
             case .success(let user): 
                 // Сохронение состояния логина
-                UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                UserDefaults.standard.hasLogged = true
+                UserDefaults.standard.hasName = user.name
+                UserDefaults.standard.hasId = user.user_id
                 self?.performSegue(withIdentifier: "loginSeque", sender: user)
                 
             case.failure(let error): 
                 // Сохронение состояния логина
-                UserDefaults.standard.hasLogged = true
-                UserDefaults.standard.hasName = "Debug"
-                UserDefaults.standard.hasId = 0
-                self?.performSegue(withIdentifier: "loginSeque", sender: User(user_id: 0, name: "Debug"))
-//                guard let alert = self?.alertService.alert(message: error.localizedDescription) else {
-//                    return }
-//                self?.present(alert, animated: true)
+//                UserDefaults.standard.hasLogged = true
+//                UserDefaults.standard.hasName = "Debug"
+//                UserDefaults.standard.hasId = 0
+//                print("Выполняется loginSeque")
+//                self?.performSegue(withIdentifier: "loginSeque", sender: User(user_id: 0, name: "Debug"))
+                guard let alert = self?.alertService.alert(message: error.localizedDescription) else {
+                    return }
+                self?.present(alert, animated: true)
             }
         }
         

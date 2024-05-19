@@ -15,7 +15,7 @@ extension UITabBarController: RootViewController {}
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var didCheckUserStatus = false // Флаг для проверки статуса пользователя только один раз
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -24,8 +24,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         
+        if !didCheckUserStatus {
+            didCheckUserStatus = true
+            checkUserStatus()
+        }
+    }
+    
+    // Функция для проверки статуса пользователя и установки соответствующего rootViewController
+    func checkUserStatus() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var controller: RootViewController?
+        let controller: RootViewController?
+        
+        print("Scene delegate ", UserDefaults.standard.hasLogged)
         
         if UserDefaults.standard.hasLogged {
             controller = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as? UITabBarController

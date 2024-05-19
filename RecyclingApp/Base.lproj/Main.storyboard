@@ -152,7 +152,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="didTapLoginButton:" destination="tgq-r8-BjP" eventType="touchUpInside" id="jYd-dN-5Dh"/>
-                                    <segue destination="YQO-WX-LJD" kind="show" identifier="loginSeque" id="B5B-jF-elg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -164,6 +163,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="TIw-pI-iKG" id="KtV-CY-Gto"/>
                         <outlet property="passwordTextField" destination="tz3-cV-WGW" id="YC9-SF-Ewy"/>
+                        <segue destination="YQO-WX-LJD" kind="show" identifier="loginSeque" id="8zy-lH-gfY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZu-ZI-6QL" sceneMemberID="firstResponder"/>
@@ -253,7 +253,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="didTapCreateAccountButton:" destination="SwX-IG-BKd" eventType="touchUpInside" id="Lxz-oh-79U"/>
-                                    <segue destination="YQO-WX-LJD" kind="show" identifier="mainScreenSeque" id="0cF-0Q-ytG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -267,6 +266,7 @@
                         <outlet property="nameTextField" destination="6aQ-Kn-HCL" id="wvw-oP-Eat"/>
                         <outlet property="passwordConfTextField" destination="woR-vP-p0a" id="UuR-LD-A1v"/>
                         <outlet property="passwordTextField" destination="B3W-dS-uCa" id="ee7-uY-Rkl"/>
+                        <segue destination="YQO-WX-LJD" kind="show" identifier="mainScreenSeque" id="m3k-ig-LHv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kN2-QL-vOL" sceneMemberID="firstResponder"/>
@@ -327,18 +327,48 @@
                                 <color key="textColor" red="0.48627450979999998" green="0.58823529409999997" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZN-83-Trq">
+                                <rect key="frame" x="126" y="388" width="143" height="77"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Log out">
+                                            <attributes>
+                                                <font key="NSFont" size="29" name="Helvetica"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" red="0.93725490199999995" green="0.69411764710000001" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseBackgroundColor" red="0.48627450979999998" green="0.58823529409999997" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapLogoutButton:" destination="XLE-yv-dtk" eventType="touchUpInside" id="fZc-3Z-MLK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0YE-7l-YnH"/>
                         <color key="backgroundColor" red="0.62352941179999999" green="0.70588235290000001" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qZN-83-Trq" firstAttribute="top" secondItem="0YE-7l-YnH" secondAttribute="top" constant="285" id="31n-fv-4bb"/>
+                            <constraint firstItem="0YE-7l-YnH" firstAttribute="bottom" secondItem="qZN-83-Trq" secondAttribute="bottom" constant="304" id="3my-qL-0Oh"/>
+                            <constraint firstItem="0YE-7l-YnH" firstAttribute="trailing" secondItem="qZN-83-Trq" secondAttribute="trailing" constant="125" id="5y2-WO-SBY"/>
+                            <constraint firstItem="0YE-7l-YnH" firstAttribute="trailing" secondItem="qZN-83-Trq" secondAttribute="trailing" constant="125" id="Fgl-FH-qoM"/>
+                            <constraint firstItem="qZN-83-Trq" firstAttribute="top" secondItem="0YE-7l-YnH" secondAttribute="top" constant="285" id="HNN-Hs-p6T"/>
+                            <constraint firstItem="0YE-7l-YnH" firstAttribute="bottom" secondItem="qZN-83-Trq" secondAttribute="bottom" constant="304" id="JvF-PS-XVO"/>
+                            <constraint firstItem="qZN-83-Trq" firstAttribute="leading" secondItem="0YE-7l-YnH" secondAttribute="leading" constant="125" id="Lt9-Ji-yIF"/>
+                            <constraint firstItem="qZN-83-Trq" firstAttribute="leading" secondItem="0YE-7l-YnH" secondAttribute="leading" constant="125" id="wie-w1-TYH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aAG-cs-IIM"/>
                     <connections>
                         <outlet property="label" destination="IV5-9H-IzM" id="sOZ-ku-bAA"/>
+                        <outlet property="logoutButton" destination="qZN-83-Trq" id="2FZ-Jr-fXy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z0a-gw-CsO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5683" y="-686"/>
+            <point key="canvasLocation" x="5681.679389312977" y="-686.61971830985919"/>
         </scene>
         <!--Camera-->
         <scene sceneID="7am-jR-n1G">
@@ -455,7 +485,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="B5B-jF-elg"/>
+        <segue reference="m3k-ig-LHv"/>
         <segue reference="7Wa-S2-e5f"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.20784313730000001" green="0.34901960780000002" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -473,7 +503,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

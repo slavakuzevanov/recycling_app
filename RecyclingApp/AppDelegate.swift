@@ -18,25 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         YMKMapKit.setApiKey("885d509d-26a1-46bc-ae25-e9075e46bea0")
         YMKMapKit.sharedInstance()
-        
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var initialViewController: UIViewController
-
-        // Проверка состояния логина
-        if UserDefaults.standard.bool(forKey: "isLoggedIn") {
-            // Если пользователь залогинен, загружаем TabBarViewController
-            initialViewController = storyboard.instantiateViewController(withIdentifier: "TabBarViewController")
-        } else {
-            // Если пользователь не залогинен, загружаем LoginViewController
-            initialViewController = storyboard.instantiateViewController(withIdentifier: "InitialViewController")
-        }
-
-        print(initialViewController.title)
-        window?.rootViewController = initialViewController
-        window?.makeKeyAndVisible()
-        print(window?.rootViewController)
-        
         return true
     }
 

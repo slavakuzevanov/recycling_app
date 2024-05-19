@@ -24,9 +24,9 @@ extension UserDefaults {
         }
     }
     
-    var hasName: String {
+    var hasName: String? {
         get {
-            string(forKey: UserDefaultsKeys.UserName.rawValue)!
+            string(forKey: UserDefaultsKeys.UserName.rawValue)
         }
         set {
             setValue(newValue, forKey: UserDefaultsKeys.UserName.rawValue)
