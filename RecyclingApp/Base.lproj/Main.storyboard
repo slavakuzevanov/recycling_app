@@ -460,19 +460,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ncn-wx-E4G" customClass="YMKMapView">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ncn-wx-E4G" customClass="YMKMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="905"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="69o-Hm-gaU"/>
                         <color key="backgroundColor" red="0.62352941179999999" green="0.70588235290000001" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Ncn-wx-E4G" firstAttribute="trailing" secondItem="69o-Hm-gaU" secondAttribute="trailing" id="BOp-9B-opj"/>
-                            <constraint firstAttribute="bottom" secondItem="Ncn-wx-E4G" secondAttribute="bottom" constant="-53" id="Q5i-m9-BQm"/>
-                            <constraint firstItem="Ncn-wx-E4G" firstAttribute="leading" secondItem="69o-Hm-gaU" secondAttribute="leading" id="m7k-Ij-OJr"/>
-                            <constraint firstItem="Ncn-wx-E4G" firstAttribute="top" secondItem="bYz-cn-rPq" secondAttribute="top" id="zpO-gK-fut"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Wmi-bQ-UuK"/>
                     <connections>

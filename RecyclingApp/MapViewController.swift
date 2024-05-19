@@ -8,16 +8,29 @@
 import UIKit
 import YandexMapsMobile
 import CoreLocation
+import Foundation
 
-class MapViewController: UIViewController, YMKUserLocationObjectListener, CLLocationManagerDelegate {
+class MapViewController: UIViewController, YMKUserLocationObjectListener, CLLocationManagerDelegate, YMKClusterListener, YMKClusterTapListener {
     
+    // MARK: - Working with UserLocation
     @IBOutlet weak var mapView: YMKMapView!
     // Подключаем IBOutlet для YMKMapView
 
+    // for user location
     var userLocationLayer: YMKUserLocationLayer!
     var cllocationManager: CLLocationManager!
     var isFirstLocationUpdate = true
     private var locationManager: YMKLocationManager?
+    
+    // for clustering
+    private var imageProvider = UIImage(named: "SearchResult")!
+    private let PLACEMARKS_NUMBER = 2000
+    private let FONT_SIZE: CGFloat = 15
+    private let MARGIN_SIZE: CGFloat = 3
+    private let STROKE_SIZE: CGFloat = 3
+    
+    // for interface on map
+    var button: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +50,19 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener, CLLoca
         cllocationManager = CLLocationManager()
         cllocationManager.delegate = self
         cllocationManager.requestWhenInUseAuthorization() // Запрос разрешения на использование геолокации
+        
+        // Note that application must retain strong references to both
+        // cluster listener and cluster tap listener
+        let collection = mapView.mapWindow.map.mapObjects.addClusterizedPlacemarkCollection(with: self)
+
+        let points = createPoints()
+        collection.addPlacemarks(with: points, image: self.imageProvider, style: YMKIconStyle())
+
+        // Placemarks won't be displayed until this method is called. It must be also called
+        // to force clusters update after collection change
+        collection.clusterPlacemarks(withClusterRadius: 60, minZoom: 15)
+        
+        setupButton()
     }
 
     // CLLocationManagerDelegate методы
@@ -79,17 +105,6 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener, CLLoca
             tappableArea: nil))
         view.pin.direction = 90
         
-//        view.arrow.setIconWith(UIImage(named: "Arrow")!)
-//        
-//        view.arrow.setIconStyleWith(YMKIconStyle(
-//            anchor: CGPoint(x: 0.0, y: 0.0) as NSValue,
-//            rotationType: 1,
-//            zIndex: 0,
-//            flat: false,
-//            visible: true,
-//            scale: 0.1,
-//            tappableArea: nil))
-//        view.arrow.direction = 180
         view.accuracyCircle.fillColor = UIColor(
                                                 red: 30.0 / 255,
                                                 green: 70.0 / 255,
@@ -117,4 +132,129 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener, CLLoca
                 )
             }
         }
+    
+    // MARK: - Working with clusters
+    func onClusterAdded(with cluster: YMKCluster) {
+        // We setup cluster appearance and tap handler in this method
+        cluster.appearance.setIconWith(clusterImage(cluster.size))
+        cluster.addClusterTapListener(with: self)
+    }
+
+    func onClusterTap(with cluster: YMKCluster) -> Bool {
+        let alert = UIAlertController(
+            title: "Tap",
+            message: String(format: "Tapped cluster with %u items", cluster.size),
+            preferredStyle: .alert)
+        alert.addAction(
+            UIAlertAction(title: "OK", style: .default, handler: nil))
+
+        present(alert, animated: true, completion: nil)
+
+        // We return true to notify map that the tap was handled and shouldn't be
+        // propagated further.
+        return true
+    }
+    
+    func clusterImage(_ clusterSize: UInt) -> UIImage {
+        let scale = UIScreen.main.scale
+        let text = (clusterSize as NSNumber).stringValue
+        let font = UIFont.systemFont(ofSize: FONT_SIZE * scale)
+        let size = text.size(withAttributes: [NSAttributedString.Key.font: font])
+        let textRadius = sqrt(size.height * size.height + size.width * size.width) / 2
+        let internalRadius = textRadius + MARGIN_SIZE * scale
+        let externalRadius = internalRadius + STROKE_SIZE * scale
+        let iconSize = CGSize(width: externalRadius * 2, height: externalRadius * 2)
+
+        UIGraphicsBeginImageContext(iconSize)
+        let ctx = UIGraphicsGetCurrentContext()!
+
+        ctx.setFillColor(UIColor.red.cgColor)
+        ctx.fillEllipse(in: CGRect(
+            origin: .zero,
+            size: CGSize(width: 2 * externalRadius, height: 2 * externalRadius)));
+
+        ctx.setFillColor(UIColor.white.cgColor)
+        ctx.fillEllipse(in: CGRect(
+            origin: CGPoint(x: externalRadius - internalRadius, y: externalRadius - internalRadius),
+            size: CGSize(width: 2 * internalRadius, height: 2 * internalRadius)));
+
+        (text as NSString).draw(
+            in: CGRect(
+                origin: CGPoint(x: externalRadius - size.width / 2, y: externalRadius - size.height / 2),
+                size: size),
+            withAttributes: [
+                NSAttributedString.Key.font: font,
+                NSAttributedString.Key.foregroundColor: UIColor.black])
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        return image
+    }
+    
+    func randomDouble() -> Double {
+        return Double(arc4random()) / Double(UINT32_MAX)
+    }
+
+    func createPoints() -> [YMKPoint]{
+        var points = [YMKPoint]()
+        for _ in 0..<PLACEMARKS_NUMBER {
+            let clusterCenter = Const.clusterCenters.randomElement()!
+            let latitude = clusterCenter.latitude + randomDouble()  - 0.5
+            let longitude = clusterCenter.longitude + randomDouble()  - 0.5
+
+            points.append(YMKPoint(latitude: latitude, longitude: longitude))
+        }
+
+        return points
+    }
+    
+    // MARK: - creating buttons
+    private enum Layout {
+        static let buttonSize: CGFloat = 55.0
+        static let buttonMargin: CGFloat = 16.0
+        static let buttonCornerRadius: CGFloat = 8.0
+    }
+    
+    func setupButton() {
+        button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "safari.fill"), for: .normal)
+        //button.setTitle("Button", for: .normal)
+        button.backgroundColor = UIColor(red: 154 / 255,
+                                         green: 181 / 255,
+                                         blue: 107 / 255,
+                                         alpha: 1
+                                        )
+        //button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 10
+        button.tintColor = UIColor(red: 239 / 255,
+                                   green: 177 / 255,
+                                   blue: 154 / 255,
+                                   alpha: 1
+                                  )
+        button.alpha = 1
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(button)
+        
+        NSLayoutConstraint.activate([
+            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Layout.buttonMargin),
+            button.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: +100),
+//            button.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0),
+            button.widthAnchor.constraint(equalToConstant: Layout.buttonSize),
+            button.heightAnchor.constraint(equalToConstant: Layout.buttonSize)
+        ])
+        
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+    }
+    
+    @objc func buttonTapped() {
+        // Действие при нажатии кнопки
+        print("Button tapped")
+        if let location = userLocationLayer.cameraPosition()?.target {
+            // Плавный зум к местоположению пользователя
+            mapView.mapWindow.map.move(
+                with: YMKCameraPosition(target: location, zoom: 14, azimuth: 0, tilt: 0),
+                animation: YMKAnimation(type: .smooth, duration: 1.5),
+                cameraCallback: nil
+            )
+        }
+    }
 }

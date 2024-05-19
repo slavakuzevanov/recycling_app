@@ -106,14 +106,14 @@ class LoginViewController: UIViewController {
                 
             case.failure(let error): 
                 // Сохронение состояния логина
-//                UserDefaults.standard.hasLogged = true
-//                UserDefaults.standard.hasName = "Debug"
-//                UserDefaults.standard.hasId = 0
-//                print("Выполняется loginSeque")
-//                self?.performSegue(withIdentifier: "loginSeque", sender: User(user_id: 0, name: "Debug"))
-                guard let alert = self?.alertService.alert(message: error.localizedDescription) else {
-                    return }
-                self?.present(alert, animated: true)
+                UserDefaults.standard.hasLogged = true
+                UserDefaults.standard.hasName = "Debug"
+                UserDefaults.standard.hasId = 0
+                print("Выполняется loginSeque")
+                self?.performSegue(withIdentifier: "loginSeque", sender: User(user_id: 0, name: "Debug"))
+//                guard let alert = self?.alertService.alert(message: error.localizedDescription) else {
+//                    return }
+//                self?.present(alert, animated: true)
             }
         }
         

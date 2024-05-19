@@ -36,6 +36,8 @@
 		F9B8D7102BF9786C000C6192 /* TabBarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B8D70F2BF9786C000C6192 /* TabBarState.swift */; };
 		F9B8D7122BF9869D000C6192 /* TabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B8D7112BF9869D000C6192 /* TabBarDelegate.swift */; };
 		F9D27A2C2BF8D38F0020B6E9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D27A2B2BF8D38F0020B6E9 /* MapViewController.swift */; };
+		F9E0AED82BFA261F00C47926 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E0AED72BFA261F00C47926 /* Const.swift */; };
+		F9E0AEDB2BFA334700C47926 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E0AEDA2BFA334700C47926 /* Palette.swift */; };
 		F9F814DC2BEF98AF00E9DE48 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F814DB2BEF98AF00E9DE48 /* TabBarViewController.swift */; };
 		F9F814DE2BEF9F4D00E9DE48 /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F814DD2BEF9F4D00E9DE48 /* ProfileNavigationController.swift */; };
 /* End PBXBuildFile section */
@@ -74,6 +76,8 @@
 		F9B8D70F2BF9786C000C6192 /* TabBarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarState.swift; sourceTree = "<group>"; };
 		F9B8D7112BF9869D000C6192 /* TabBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarDelegate.swift; sourceTree = "<group>"; };
 		F9D27A2B2BF8D38F0020B6E9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		F9E0AED72BFA261F00C47926 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		F9E0AEDA2BFA334700C47926 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		F9F814DB2BEF98AF00E9DE48 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F9F814DD2BEF9F4D00E9DE48 /* ProfileNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +132,7 @@
 		F96DA57D2B5C0AFF00EFAD52 /* RecyclingApp */ = {
 			isa = PBXGroup;
 			children = (
+				F9E0AED92BFA333500C47926 /* Utils */,
 				F9B8D7082BF95637000C6192 /* CustomTabBar */,
 				F9B8D7052BF9492B000C6192 /* Extensions */,
 				F96DA57E2B5C0AFF00EFAD52 /* AppDelegate.swift */,
@@ -155,6 +160,7 @@
 				F9F814DD2BEF9F4D00E9DE48 /* ProfileNavigationController.swift */,
 				F9D27A2B2BF8D38F0020B6E9 /* MapViewController.swift */,
 				F9B8D7012BF93DAF000C6192 /* MainApp.storyboard */,
+				F9E0AED72BFA261F00C47926 /* Const.swift */,
 			);
 			path = RecyclingApp;
 			sourceTree = "<group>";
@@ -177,6 +183,14 @@
 				F9B8D7112BF9869D000C6192 /* TabBarDelegate.swift */,
 			);
 			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		F9E0AED92BFA333500C47926 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F9E0AEDA2BFA334700C47926 /* Palette.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +317,7 @@
 				F96DA5982B5C211D00EFAD52 /* NetworkingService.swift in Sources */,
 				F9B8D70C2BF957E3000C6192 /* CustomTabBar.swift in Sources */,
 				F96DA57F2B5C0AFF00EFAD52 /* AppDelegate.swift in Sources */,
+				F9E0AED82BFA261F00C47926 /* Const.swift in Sources */,
 				F96DA5AC2B5C706A00EFAD52 /* CreateAccountViewController.swift in Sources */,
 				F9D27A2C2BF8D38F0020B6E9 /* MapViewController.swift in Sources */,
 				F9F814DE2BEF9F4D00E9DE48 /* ProfileNavigationController.swift in Sources */,
@@ -321,6 +336,7 @@
 				F96DA5A22B5C249000EFAD52 /* FormTextField.swift in Sources */,
 				F9B8D7102BF9786C000C6192 /* TabBarState.swift in Sources */,
 				F96DA5AE2B5C73EB00EFAD52 /* AccountSend.swift in Sources */,
+				F9E0AEDB2BFA334700C47926 /* Palette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
