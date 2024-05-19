@@ -21,6 +21,7 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener, CLLoca
     var cllocationManager: CLLocationManager!
     var isFirstLocationUpdate = true
     private var locationManager: YMKLocationManager?
+    var currentUserLocation: YMKPoint?
     
     // for clustering
     private var imageProvider = UIImage(named: "SearchResult")!
@@ -84,15 +85,12 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener, CLLoca
             let latitude = location.coordinate.latitude
             let longitude = location.coordinate.longitude
             print("Latitude: \(latitude), Longitude: \(longitude)")
+            currentUserLocation = YMKPoint(latitude: latitude, longitude: longitude)
         }
     }
 
     // YMKUserLocationObjectListener методы
     func onObjectAdded(with view: YMKUserLocationView) {
-        
-        guard let mapWindow = mapView.mapWindow else {
-                return
-            }
         
         view.pin.setIconWith(UIImage(named: "Arrow")!)
         view.pin.setIconStyleWith(YMKIconStyle(
@@ -111,6 +109,8 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener, CLLoca
                                                 blue: 200.0 / 255,
                                                 alpha: 0.3
                                                 )
+        
+        
     }
 
     func onObjectRemoved(with view: YMKUserLocationView) {
@@ -130,6 +130,8 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener, CLLoca
                     animation: YMKAnimation(type: .smooth, duration: 1.5),
                     cameraCallback: nil
                 )
+                print("TYPE: ", type(of: location))
+                currentUserLocation = location
             }
         }
     

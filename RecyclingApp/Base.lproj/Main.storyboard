@@ -399,6 +399,17 @@
                     <view key="view" contentMode="scaleToFill" id="Mc7-Y2-qvl">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZo-9H-9jh">
+                                <rect key="frame" x="128" y="392" width="136" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="dXu-5F-zxb" kind="show" id="XhA-yP-I7z"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="EgI-xi-NNA"/>
                         <color key="backgroundColor" red="0.62352941179999999" green="0.70588235290000001" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -407,6 +418,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhJ-nU-EAj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5681.679389312977" y="26.760563380281692"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="QeO-zh-Mk7">
+            <objects>
+                <viewController id="dXu-5F-zxb" customClass="TestViewController" customModule="RecyclingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N7T-1J-MZc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gqR-6g-Pi5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Guz-iH-qMD"/>
+                    <connections>
+                        <outlet property="locationContainerView" destination="N7T-1J-MZc" id="djH-QA-Cot"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3rm-fE-LVS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6645" y="27"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="rez-8g-Y4J">
