@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SwiftUI
+import YandexMapsMobile
 
 class TestViewController: UIViewController {
 
@@ -16,8 +17,12 @@ class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Создаем экземпляр LocationViews
-        let locationView = LocationsView()
+        
+        // Создаем экземпляр LocationViewModel
+        let locationsViewModel = LocationsViewModel(userLocationBinding: .constant(nil), mapView: YandexMapView(userLocation: .constant(YMKPoint())))
+
+        // Создаем представление LocationsView и передаем LocationViewModel как окружение
+        let locationView = LocationsView().environmentObject(locationsViewModel)
 
         // Создаем UIHostingController с LocationViews
         let hostingController = UIHostingController(rootView: locationView)

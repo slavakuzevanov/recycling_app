@@ -43,6 +43,7 @@
 		F9E55E0E2BFA429F00BD720D /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E55E0D2BFA429F00BD720D /* LocationsView.swift */; };
 		F9E55E122BFA4ADE00BD720D /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E55E112BFA4ADE00BD720D /* LocationsViewModel.swift */; };
 		F9E55E142BFA591700BD720D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E55E132BFA591700BD720D /* TestViewController.swift */; };
+		F9E55E162BFAC48D00BD720D /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E55E152BFAC48D00BD720D /* LocationsListView.swift */; };
 		F9F814DC2BEF98AF00E9DE48 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F814DB2BEF98AF00E9DE48 /* TabBarViewController.swift */; };
 		F9F814DE2BEF9F4D00E9DE48 /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F814DD2BEF9F4D00E9DE48 /* ProfileNavigationController.swift */; };
 /* End PBXBuildFile section */
@@ -88,6 +89,7 @@
 		F9E55E0D2BFA429F00BD720D /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
 		F9E55E112BFA4ADE00BD720D /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
 		F9E55E132BFA591700BD720D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		F9E55E152BFAC48D00BD720D /* LocationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsListView.swift; sourceTree = "<group>"; };
 		F9F814DB2BEF98AF00E9DE48 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F9F814DD2BEF9F4D00E9DE48 /* ProfileNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				F9E55E0D2BFA429F00BD720D /* LocationsView.swift */,
+				F9E55E152BFAC48D00BD720D /* LocationsListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				F9E55E062BFA3DD000BD720D /* LocationsDataService.swift in Sources */,
 				F96DA5AE2B5C73EB00EFAD52 /* AccountSend.swift in Sources */,
 				F9E0AEDB2BFA334700C47926 /* Palette.swift in Sources */,
+				F9E55E162BFAC48D00BD720D /* LocationsListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
