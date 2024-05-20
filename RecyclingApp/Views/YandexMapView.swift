@@ -18,6 +18,7 @@ struct YandexMapView: UIViewRepresentable {
     class Coordinator: NSObject, YMKUserLocationObjectListener {
         var parent: YandexMapView
         var userLocationLayer: YMKUserLocationLayer
+        var isFirstLocationUpdate = true
         
         init(parent: YandexMapView) {
             self.parent = parent

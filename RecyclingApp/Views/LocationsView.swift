@@ -79,6 +79,7 @@ extension LocationsView {
             if vm.showLocationsList {
                 LocationsListView()
             }
+            //Command CompileAssetCatalog failed with a nonzero exit code
         }
         .background(.thickMaterial)
         .clipShape(RoundedRectangle(cornerRadius: 10))

@@ -29,6 +29,8 @@ class LocationsViewModel: NSObject, ObservableObject {
     @Published var userLocation: YMKPoint? 
     @Published var cameraPosition: YMKCameraPosition?
     
+    private var isFirstLocationUpdate = true
+    
     let locationManager = CLLocationManager()
     
     init(userLocationBinding: Binding<YMKPoint?>) {
@@ -85,6 +87,12 @@ extension LocationsViewModel: CLLocationManagerDelegate {
         if let location = locations.last {
             userLocation = YMKPoint(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             print("location manager | location | \(location.coordinate.latitude) | \(location.coordinate.longitude)")
+            
+            // Scroll to user location if it's the first update
+            if isFirstLocationUpdate, let userLocation = userLocation {
+                cameraPosition = YMKCameraPosition(target: userLocation, zoom: 15, azimuth: 0, tilt: 0)
+                isFirstLocationUpdate = false
+            }
         }
     }
 }
