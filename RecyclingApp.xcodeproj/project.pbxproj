@@ -10,6 +10,7 @@
 		891490CE2BFB354B007D1817 /* YandexMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891490CD2BFB354B007D1817 /* YandexMapView.swift */; };
 		EEA5CEFEF8FC462418AC1AD3 /* Pods_RecyclingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C105D463D509E278C1475D6 /* Pods_RecyclingApp.framework */; };
 		F9018CFE2B5EBE8D00FF71B9 /* UIColor_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9018CFD2B5EBE8D00FF71B9 /* UIColor_extension.swift */; };
+		F95C20222BFB9A2B00DBED6A /* LocationPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95C20212BFB9A2B00DBED6A /* LocationPreviewView.swift */; };
 		F96DA57F2B5C0AFF00EFAD52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA57E2B5C0AFF00EFAD52 /* AppDelegate.swift */; };
 		F96DA5832B5C0AFF00EFAD52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5822B5C0AFF00EFAD52 /* ViewController.swift */; };
 		F96DA5862B5C0AFF00EFAD52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96DA5842B5C0AFF00EFAD52 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		891490CD2BFB354B007D1817 /* YandexMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapView.swift; sourceTree = "<group>"; };
 		EF61348A29A328DB4D3CCD78 /* Pods-RecyclingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecyclingApp.release.xcconfig"; path = "Target Support Files/Pods-RecyclingApp/Pods-RecyclingApp.release.xcconfig"; sourceTree = "<group>"; };
 		F9018CFD2B5EBE8D00FF71B9 /* UIColor_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_extension.swift; sourceTree = "<group>"; };
+		F95C20212BFB9A2B00DBED6A /* LocationPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPreviewView.swift; sourceTree = "<group>"; };
 		F96DA57B2B5C0AFF00EFAD52 /* RecyclingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecyclingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96DA57E2B5C0AFF00EFAD52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F96DA5802B5C0AFF00EFAD52 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				F9E55E0D2BFA429F00BD720D /* LocationsView.swift */,
 				F9E55E152BFAC48D00BD720D /* LocationsListView.swift */,
 				891490CD2BFB354B007D1817 /* YandexMapView.swift */,
+				F95C20212BFB9A2B00DBED6A /* LocationPreviewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				F96DA59A2B5C216D00EFAD52 /* Message.swift in Sources */,
 				F9B8D7072BF9495A000C6192 /* UserDefaults+Extension.swift in Sources */,
 				F9B8D70A2BF9566D000C6192 /* MainApp.swift in Sources */,
+				F95C20222BFB9A2B00DBED6A /* LocationPreviewView.swift in Sources */,
 				F96DA5AA2B5C627300EFAD52 /* User.swift in Sources */,
 				F9B8D7042BF946A0000C6192 /* UINavViewController.swift in Sources */,
 				F9018CFE2B5EBE8D00FF71B9 /* UIColor_extension.swift in Sources */,
