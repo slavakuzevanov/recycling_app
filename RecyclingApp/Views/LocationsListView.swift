@@ -52,5 +52,5 @@ extension LocationsListView {
 
 #Preview {
     LocationsListView()
-        .environmentObject(LocationsViewModel(userLocationBinding: .constant(nil), mapView: YandexMapView(userLocation: .constant(nil))))
+        .environmentObject(LocationsViewModel(userLocationBinding: .constant(nil)))
 }

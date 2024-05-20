@@ -11,7 +11,6 @@ import CoreLocation
 
 struct LocationsView: View {
     @EnvironmentObject private var vm: LocationsViewModel
-    @State private var userLocation: YMKPoint?
     
     private enum Layout {
         static let buttonSize: CGFloat = 55.0
@@ -20,10 +19,8 @@ struct LocationsView: View {
     }
     
     var body: some View {
-        let mapViewWrapper = vm.mapView
-        
         return ZStack {
-            mapViewWrapper
+            YandexMapView(cameraPosition: $vm.cameraPosition)
                 .ignoresSafeArea(.all)
             
             VStack(spacing: 0) {
@@ -31,18 +28,7 @@ struct LocationsView: View {
                     .padding(10)
                 Spacer()
                 
-                Button(action: {
-                    guard let userLocation = vm.userLocation else {
-                        print("User location is nil")
-                        return
-                    }
-                    print("Button tapped \(userLocation.latitude) \(userLocation.longitude)")
-
-                    let cameraPosition = YMKCameraPosition(target: userLocation, zoom: 15, azimuth: 0, tilt: 0)
-                    mapViewWrapper.getMapView().mapWindow.map.move(with: cameraPosition,
-                                                                   animation: .init(type: .smooth, duration: 1.5),
-                                                                   cameraCallback: nil)
-                }) {
+                Button(action: vm.scrollToUserLocation) {
                     Image(systemName: "safari.fill")
                         .foregroundColor(Color(red: 239 / 255, green: 177 / 255, blue: 154 / 255))
                 }
@@ -54,14 +40,7 @@ struct LocationsView: View {
                 .position(x: UIScreen.main.bounds.width - Layout.buttonSize / 2 - Layout.buttonMargin,
                           y: UIScreen.main.bounds.height - Layout.buttonSize / 2 - Layout.buttonBottomOffset)
                 
-                Button(action: {
-                    print("Button2 tapped")
-                    let cameraPosition = YMKCameraPosition(target: $vm.mapRegion.wrappedValue, zoom: 15, azimuth: 0, tilt: 0)
-                    mapViewWrapper.getMapView().mapWindow.map.move(with: cameraPosition,
-                                                                   animation: .init(type: .smooth, duration: 1.5),
-                                                                   cameraCallback: nil)
-                    print("Button2 tapped ", $vm.mapRegion.wrappedValue.latitude, $vm.mapRegion.wrappedValue.longitude)
-                }) {
+                Button(action: vm.scrollToCurrentRegion) {
                     Image(systemName: "safari.fill")
                         .foregroundColor(Color(red: 239 / 255, green: 177 / 255, blue: 154 / 255))
                 }
@@ -109,5 +88,5 @@ extension LocationsView {
 
 #Preview {
     LocationsView()
-        .environmentObject(LocationsViewModel(userLocationBinding: .constant(nil), mapView: YandexMapView(userLocation: .constant(nil))))
+        .environmentObject(LocationsViewModel(userLocationBinding: .constant(nil)))
 }

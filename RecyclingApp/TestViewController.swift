@@ -19,7 +19,7 @@ class TestViewController: UIViewController {
 
         
         // Создаем экземпляр LocationViewModel
-        let locationsViewModel = LocationsViewModel(userLocationBinding: .constant(nil), mapView: YandexMapView(userLocation: .constant(YMKPoint())))
+        let locationsViewModel = LocationsViewModel(userLocationBinding: .constant(nil))
 
         // Создаем представление LocationsView и передаем LocationViewModel как окружение
         let locationView = LocationsView().environmentObject(locationsViewModel)
