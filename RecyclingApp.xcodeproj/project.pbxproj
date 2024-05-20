@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		891490CE2BFB354B007D1817 /* YandexMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891490CD2BFB354B007D1817 /* YandexMapView.swift */; };
 		EEA5CEFEF8FC462418AC1AD3 /* Pods_RecyclingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C105D463D509E278C1475D6 /* Pods_RecyclingApp.framework */; };
 		F9018CFE2B5EBE8D00FF71B9 /* UIColor_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9018CFD2B5EBE8D00FF71B9 /* UIColor_extension.swift */; };
 		F96DA57F2B5C0AFF00EFAD52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA57E2B5C0AFF00EFAD52 /* AppDelegate.swift */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		20304B05B9D44E057B0C8D5C /* Pods-RecyclingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecyclingApp.debug.xcconfig"; path = "Target Support Files/Pods-RecyclingApp/Pods-RecyclingApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4C105D463D509E278C1475D6 /* Pods_RecyclingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecyclingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		891490CD2BFB354B007D1817 /* YandexMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapView.swift; sourceTree = "<group>"; };
 		EF61348A29A328DB4D3CCD78 /* Pods-RecyclingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecyclingApp.release.xcconfig"; path = "Target Support Files/Pods-RecyclingApp/Pods-RecyclingApp.release.xcconfig"; sourceTree = "<group>"; };
 		F9018CFD2B5EBE8D00FF71B9 /* UIColor_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_extension.swift; sourceTree = "<group>"; };
 		F96DA57B2B5C0AFF00EFAD52 /* RecyclingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecyclingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,6 +225,7 @@
 			children = (
 				F9E55E0D2BFA429F00BD720D /* LocationsView.swift */,
 				F9E55E152BFAC48D00BD720D /* LocationsListView.swift */,
+				891490CD2BFB354B007D1817 /* YandexMapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				F9B8D7122BF9869D000C6192 /* TabBarDelegate.swift in Sources */,
 				F96DA5982B5C211D00EFAD52 /* NetworkingService.swift in Sources */,
 				F9B8D70C2BF957E3000C6192 /* CustomTabBar.swift in Sources */,
+				891490CE2BFB354B007D1817 /* YandexMapView.swift in Sources */,
 				F96DA57F2B5C0AFF00EFAD52 /* AppDelegate.swift in Sources */,
 				F9E0AED82BFA261F00C47926 /* Const.swift in Sources */,
 				F96DA5AC2B5C706A00EFAD52 /* CreateAccountViewController.swift in Sources */,
