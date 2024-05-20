@@ -31,7 +31,7 @@ class LocationsViewModel: NSObject, ObservableObject {
     
     private var isFirstLocationUpdate = true
     
-    private var yandexMapView: YandexMapView?
+    var yandexMapView: YandexMapView?
     
     let locationManager = CLLocationManager()
     

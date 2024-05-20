@@ -10,7 +10,7 @@ import YandexMapsMobile
 import CoreLocation
 
 struct LocationsView: View {
-    @EnvironmentObject private var vm: LocationsViewModel
+    @EnvironmentObject var vm: LocationsViewModel
     
     private enum Layout {
         static let buttonSize: CGFloat = 55.0

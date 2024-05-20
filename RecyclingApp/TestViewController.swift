@@ -13,6 +13,9 @@ import YandexMapsMobile
 class TestViewController: UIViewController {
 
     @IBOutlet weak var locationContainerView: UIView!
+    
+    var drivingSession: YMKDrivingSession?
+    var mapView: YandexMapView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,5 +41,70 @@ class TestViewController: UIViewController {
             hostingController.view.bottomAnchor.constraint(equalTo: locationContainerView.bottomAnchor)
         ])
         hostingController.didMove(toParent: self)
+        
+        // Используем DispatchQueue чтобы подождать, пока view будет полностью инициализировано
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            if let mapView = locationsViewModel.yandexMapView {
+                self.mapView = mapView
+            } else {
+                print("YandexMapView is not initialized yet")
+            }
+        }
+        
+        print("|||||||||||||||||||||||| mapRegion", locationsViewModel.mapRegion.latitude, locationsViewModel.mapRegion.longitude)
+        print("|||||||||||||||||||||||| cameraposition first", locationsViewModel.cameraPosition?.target.latitude, locationsViewModel.cameraPosition?.target.longitude)
+        locationsViewModel.setMapView(mapView: YandexMapView(cameraPosition: .constant(nil)))
+        print("|||||||||||||||||||||||| cameraposition second", locationsViewModel.cameraPosition?.target.latitude, locationsViewModel.cameraPosition?.target.longitude)
+        let requestPoints : [YMKRequestPoint] = [
+            YMKRequestPoint(
+                point: Const.routeStartPoint, type: .waypoint,
+                pointContext: nil, drivingArrivalPointId: nil),
+            YMKRequestPoint(
+                point: Const.routeEndPoint, type: .waypoint,
+                pointContext: nil, drivingArrivalPointId: nil),
+            ]
+        
+        let responseHandler = {(routesResponse: [YMKDrivingRoute]?, error: Error?) -> Void in
+            if let routes = routesResponse {
+                print("Получены пути")
+                self.onRoutesReceived(routes)
+            } else {
+                print("НЕ получены пути")
+                self.onRoutesError(error!)
+            }
+        }
+        
+        let drivingRouter = YMKDirectionsFactory.instance().createDrivingRouter(withType: .combined)
+        drivingSession = drivingRouter.requestRoutes(
+            with: requestPoints,
+            drivingOptions: YMKDrivingOptions(),
+            vehicleOptions: YMKDrivingVehicleOptions(),
+            routeHandler: responseHandler)
+        
+        mapView = locationsViewModel.yandexMapView!
+    }
+}
+
+extension TestViewController {
+    func onRoutesReceived(_ routes: [YMKDrivingRoute]) {
+        let mapObjects = mapView!.mapView.mapWindow.map.mapObjects
+        for route in routes {
+            mapObjects.addPolyline(with: route.geometry)
+        }
+    }
+
+    func onRoutesError(_ error: Error) {
+        let routingError = (error as NSError).userInfo[YRTUnderlyingErrorKey] as! YRTError
+        var errorMessage = "Unknown error"
+        if routingError.isKind(of: YRTNetworkError.self) {
+            errorMessage = "Network error"
+        } else if routingError.isKind(of: YRTRemoteError.self) {
+            errorMessage = "Remote server error"
+        }
+
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+        present(alert, animated: true, completion: nil)
     }
 }
