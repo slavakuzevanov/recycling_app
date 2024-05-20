@@ -31,6 +31,8 @@ class LocationsViewModel: NSObject, ObservableObject {
     
     private var isFirstLocationUpdate = true
     
+    private var yandexMapView: YandexMapView?
+    
     let locationManager = CLLocationManager()
     
     init(userLocationBinding: Binding<YMKPoint?>) {
@@ -50,6 +52,10 @@ class LocationsViewModel: NSObject, ObservableObject {
             mapRegion = YMKPoint(latitude: location.coordinates.latitude, longitude: location.coordinates.longitude)
         }
         print("Map region latitude \(mapRegion.latitude) longitude \(mapRegion.longitude)")
+    }
+    
+    func setMapView(mapView: YandexMapView) {
+        self.yandexMapView = mapView
     }
     
     func toggleLocationsList() {
@@ -79,6 +85,14 @@ class LocationsViewModel: NSObject, ObservableObject {
             azimuth: 0,
             tilt: 0
         )
+    }
+    
+    func buildRoute() {
+        guard let userLocation = userLocation, let mapView = yandexMapView else { 
+            print("Не удалось получить YandexMapView")
+            return }
+        print("Вызываю drawRoute")
+        mapView.drawRoute(from: userLocation, to: mapRegion)
     }
 }
 

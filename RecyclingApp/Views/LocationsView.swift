@@ -20,7 +20,11 @@ struct LocationsView: View {
     
     var body: some View {
         return ZStack {
-            YandexMapView(cameraPosition: $vm.cameraPosition)
+            let mapViewWrapper = YandexMapView(cameraPosition: $vm.cameraPosition)
+            mapViewWrapper
+                .onAppear {
+                    vm.setMapView(mapView: mapViewWrapper)
+                }
                 .ignoresSafeArea(.all)
             
             VStack(spacing: 0) {
@@ -113,20 +117,22 @@ extension LocationsView {
         .background(Color(red: 154 / 255, green: 181 / 255, blue: 107 / 255))
         .cornerRadius(10)
         .padding(.leading, Layout.buttonMargin)
-//        .padding(.bottom, Layout.buttonBottomOffset) // Используем новый отступ снизу
 
     }
     
     private var mapRegionButton: some View{
-        Button(action: vm.scrollToCurrentRegion) {
+        Button(action: {
+            vm.scrollToCurrentRegion()
+            print("Button2 tapped \(vm.mapRegion.latitude) \(vm.mapRegion.longitude)")
+            vm.buildRoute()
+        }, label: {
             Image(systemName: "safari.fill")
                 .foregroundColor(Color(red: 239 / 255, green: 177 / 255, blue: 154 / 255))
-        }
+        })
         .frame(width: Layout.buttonSize, height: Layout.buttonSize)
         .background(Color(red: 154 / 255, green: 0 / 255, blue: 107 / 255))
         .cornerRadius(10)
         .padding(.leading, Layout.buttonMargin)
-//        .padding(.bottom, Layout.buttonBottomOffset) // Используем новый отступ снизу
     }
 }
 

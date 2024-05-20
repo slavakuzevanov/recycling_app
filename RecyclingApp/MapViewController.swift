@@ -15,6 +15,7 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener, CLLoca
     // MARK: - Working with UserLocation
     @IBOutlet weak var mapView: YMKMapView!
     // Подключаем IBOutlet для YMKMapView
+    var drivingSession: YMKDrivingSession?
 
     // for user location
     var userLocationLayer: YMKUserLocationLayer!
@@ -64,6 +65,8 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener, CLLoca
         collection.clusterPlacemarks(withClusterRadius: 60, minZoom: 15)
         
         setupButton()
+        setupButton2()
+        
     }
 
     // CLLocationManagerDelegate методы
@@ -258,5 +261,103 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener, CLLoca
                 cameraCallback: nil
             )
         }
+    }
+    
+    func setupButton2() {
+        button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "safari.fill"), for: .normal)
+        //button.setTitle("Button", for: .normal)
+        button.backgroundColor = UIColor(red: 154 / 255,
+                                         green: 0 / 255,
+                                         blue: 107 / 255,
+                                         alpha: 1
+                                        )
+        //button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 10
+        button.tintColor = UIColor(red: 239 / 255,
+                                   green: 177 / 255,
+                                   blue: 154 / 255,
+                                   alpha: 1
+                                  )
+        button.alpha = 1
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(button)
+        
+        NSLayoutConstraint.activate([
+            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Layout.buttonMargin),
+            button.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: +200),
+//            button.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0),
+            button.widthAnchor.constraint(equalToConstant: Layout.buttonSize),
+            button.heightAnchor.constraint(equalToConstant: Layout.buttonSize)
+        ])
+        
+        button.addTarget(self, action: #selector(buttonTapped2), for: .touchUpInside)
+    }
+    
+    @objc func buttonTapped2() {
+        // Действие при нажатии кнопки
+        print("Button2 tapped")
+        if let location = userLocationLayer.cameraPosition()?.target {
+            // Плавный зум к местоположению пользователя
+            mapView.mapWindow.map.move(
+                with: YMKCameraPosition(target: location, zoom: 14, azimuth: 0, tilt: 0),
+                animation: YMKAnimation(type: .smooth, duration: 1.5),
+                cameraCallback: nil
+            )
+        }
+        
+        // Посмтроение маршрута
+        let requestPoints : [YMKRequestPoint] = [
+            YMKRequestPoint(
+                point: Const.routeStartPoint, type: .waypoint,
+                pointContext: nil, drivingArrivalPointId: nil),
+            YMKRequestPoint(
+                point: Const.routeEndPoint, type: .waypoint,
+                pointContext: nil, drivingArrivalPointId: nil),
+            ]
+        
+        let responseHandler = {(routesResponse: [YMKDrivingRoute]?, error: Error?) -> Void in
+            if let routes = routesResponse {
+                print("Получены пути")
+                self.onRoutesReceived(routes)
+            } else {
+                print("НЕ получены пути")
+                self.onRoutesError(error!)
+            }
+        }
+        
+        let drivingRouter = YMKDirectionsFactory.instance().createDrivingRouter(withType: .combined)
+        drivingSession = drivingRouter.requestRoutes(
+            with: requestPoints,
+            drivingOptions: YMKDrivingOptions(),
+            vehicleOptions: YMKDrivingVehicleOptions(),
+            routeHandler: responseHandler)
+        
+        print("requested point \(requestPoints[0].point.latitude) \(requestPoints[0].point.longitude)")
+    }
+}
+
+extension MapViewController {
+    func onRoutesReceived(_ routes: [YMKDrivingRoute]) {
+        let mapObjects = mapView.mapWindow.map.mapObjects
+        for route in routes {
+            mapObjects.addPolyline(with: route.geometry)
+        }
+    }
+
+    func onRoutesError(_ error: Error) {
+        let routingError = (error as NSError).userInfo[YRTUnderlyingErrorKey] as! YRTError
+        var errorMessage = "Unknown error"
+        if routingError.isKind(of: YRTNetworkError.self) {
+            errorMessage = "Network error"
+        } else if routingError.isKind(of: YRTRemoteError.self) {
+            errorMessage = "Remote server error"
+        }
+
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+        present(alert, animated: true, completion: nil)
     }
 }
