@@ -17,20 +17,20 @@ class TestViewController: UIViewController, LocationsViewDelegate {
     
     var drivingSession: YMKDrivingSession?
     var mapView: YandexMapView?
+    var locationsViewModel: LocationsViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
-        // Создаем экземпляр LocationViewModel
-        let locationsViewModel = LocationsViewModel(userLocationBinding: .constant(nil))
-        locationsViewModel.setMapView(mapView: YandexMapView(cameraPosition: .constant(nil)))
-        // Установите делегата
-        locationsViewModel.delegate = self
+        // Инициализируем locationsViewModel как свойство класса
+        locationsViewModel = LocationsViewModel(userLocationBinding: .constant(nil))
+        locationsViewModel?.setMapView(mapView: YandexMapView(cameraPosition: .constant(nil)))
+        locationsViewModel?.delegate = self
         
 
         // Создаем представление LocationsView и передаем LocationViewModel как окружение
-        let locationView = LocationsView().environmentObject(locationsViewModel)
+        let locationView = LocationsView().environmentObject(locationsViewModel!)
 
         // Создаем UIHostingController с LocationViews
         let hostingController = UIHostingController(rootView: locationView)
@@ -49,23 +49,35 @@ class TestViewController: UIViewController, LocationsViewDelegate {
         
         // Используем DispatchQueue чтобы подождать, пока view будет полностью инициализировано
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            if let mapView = locationsViewModel.yandexMapView {
+            if let mapView = self.locationsViewModel!.yandexMapView {
                 self.mapView = mapView
             } else {
                 print("YandexMapView is not initialized yet")
             }
         }
         
-        print("|||||||||||||||||||||||| mapRegion", locationsViewModel.mapRegion.latitude, locationsViewModel.mapRegion.longitude)
-        print("|||||||||||||||||||||||| cameraposition first", locationsViewModel.cameraPosition?.target.latitude, locationsViewModel.cameraPosition?.target.longitude)
-        print("|||||||||||||||||||||||| cameraposition second", locationsViewModel.cameraPosition?.target.latitude, locationsViewModel.cameraPosition?.target.longitude)
+        print("|||||||||||||||||||||||| mapRegion", locationsViewModel!.mapRegion.latitude, locationsViewModel!.mapRegion.longitude)
+        print("|||||||||||||||||||||||| cameraposition first", locationsViewModel!.cameraPosition?.target.latitude, locationsViewModel!.cameraPosition?.target.longitude)
+        print("|||||||||||||||||||||||| cameraposition second", locationsViewModel!.cameraPosition?.target.latitude, locationsViewModel!.cameraPosition?.target.longitude)
         
+        mapView = locationsViewModel?.yandexMapView!
+    }
+    
+    //MARK: Функции делегата LocationsViewDelegate
+    func didRouteTapButton() {
+        // Обработка нажатия кнопки
+        print("Button tapped in TestViewController")
+        
+        //Удалим все polyline с карты, если до этого были
+        mapView?.mapView.mapWindow.map.mapObjects.clear()
+        
+        //Отрисуем пути от локации пользователя до точки интереса
         let requestPoints : [YMKRequestPoint] = [
             YMKRequestPoint(
-                point: Const.routeStartPoint, type: .waypoint,
+                point: locationsViewModel!.userLocation! , type: .waypoint,
                 pointContext: nil, drivingArrivalPointId: nil),
             YMKRequestPoint(
-                point: Const.routeEndPoint, type: .waypoint,
+                point: locationsViewModel!.mapRegion, type: .waypoint,
                 pointContext: nil, drivingArrivalPointId: nil),
             ]
         
@@ -85,14 +97,6 @@ class TestViewController: UIViewController, LocationsViewDelegate {
             drivingOptions: YMKDrivingOptions(),
             vehicleOptions: YMKDrivingVehicleOptions(),
             routeHandler: responseHandler)
-        
-        mapView = locationsViewModel.yandexMapView!
-    }
-    
-    //MARK: Функции делегата LocationsViewDelegate
-    func didTapButton() {
-        // Обработка нажатия кнопки
-        print("Button tapped in TestViewController")
     }
 }
 

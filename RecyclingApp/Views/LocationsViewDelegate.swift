@@ -8,5 +8,5 @@
 import Foundation
 
 protocol LocationsViewDelegate: AnyObject {
-    func didTapButton()
+    func didRouteTapButton()
 }

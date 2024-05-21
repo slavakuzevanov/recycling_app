@@ -14,10 +14,10 @@ class LocationsViewModel: NSObject, ObservableObject {
     //MARK: Все для делегата
     weak var delegate: LocationsViewDelegate?
     
-    func buttonTapped() {
+    func routeButtonTapped() {
         print("Button tapped in ViewModel")
         if let delegate = delegate {
-            delegate.didTapButton()
+            delegate.didRouteTapButton()
             print("Delegate method called")
         } else {
             print("Delegate is nil")
@@ -99,14 +99,6 @@ class LocationsViewModel: NSObject, ObservableObject {
             azimuth: 0,
             tilt: 0
         )
-    }
-    
-    func buildRoute() {
-        guard let userLocation = userLocation, let mapView = yandexMapView else { 
-            print("Не удалось получить YandexMapView")
-            return }
-        print("Вызываю drawRoute")
-        mapView.drawRoute(from: userLocation, to: mapRegion)
     }
 }
 

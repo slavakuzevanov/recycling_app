@@ -20,7 +20,7 @@ struct LocationPreviewView: View {
             }
             VStack(spacing: 8) {
                 learnMoreButton
-                nextButton
+                routeButton
             }
         }
         .padding(20)
@@ -79,12 +79,12 @@ extension LocationPreviewView {
         .buttonStyle(.borderedProminent)
     }
     
-    private var nextButton: some View {
+    private var routeButton: some View {
         Button(action: {
-            vm.buttonTapped()
+            vm.routeButtonTapped()
             print("Button tapped in LocationsPreviewView")
         }, label: {
-            Text("Next")
+            Text("Route")
                 .font(.headline)
                 .frame(width: 125, height: 35)
         })
