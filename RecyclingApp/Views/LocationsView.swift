@@ -107,6 +107,8 @@ extension LocationsView {
     private var userLocationButton: some View {
         Button(action: {
             vm.scrollToUserLocation()
+//            vm.buttonTapped()
+//            print("Button tapped in LocationsView")
             print("Button tapped \(vm.userLocation?.latitude) \(vm.userLocation?.longitude)")
             print("Button tapped current location \(vm.mapRegion.latitude) \(vm.mapRegion.longitude)")
         }, label: {

@@ -10,6 +10,20 @@ import YandexMapsMobile
 import CoreLocation
 
 class LocationsViewModel: NSObject, ObservableObject {
+    
+    //MARK: Все для делегата
+    weak var delegate: LocationsViewDelegate?
+    
+    func buttonTapped() {
+        print("Button tapped in ViewModel")
+        if let delegate = delegate {
+            delegate.didTapButton()
+            print("Delegate method called")
+        } else {
+            print("Delegate is nil")
+        }
+    }
+    
     // All loaded locations
     @Published var locations: [Location]
     

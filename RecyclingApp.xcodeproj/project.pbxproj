@@ -12,6 +12,7 @@
 		F9018CFE2B5EBE8D00FF71B9 /* UIColor_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9018CFD2B5EBE8D00FF71B9 /* UIColor_extension.swift */; };
 		F95C20222BFB9A2B00DBED6A /* LocationPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95C20212BFB9A2B00DBED6A /* LocationPreviewView.swift */; };
 		F95C20242BFBB79900DBED6A /* RoutePolylineStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95C20232BFBB79900DBED6A /* RoutePolylineStyles.swift */; };
+		F95C20292BFC0F8300DBED6A /* LocationsViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95C20282BFC0F8300DBED6A /* LocationsViewDelegate.swift */; };
 		F96DA57F2B5C0AFF00EFAD52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA57E2B5C0AFF00EFAD52 /* AppDelegate.swift */; };
 		F96DA5832B5C0AFF00EFAD52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5822B5C0AFF00EFAD52 /* ViewController.swift */; };
 		F96DA5862B5C0AFF00EFAD52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96DA5842B5C0AFF00EFAD52 /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		F9018CFD2B5EBE8D00FF71B9 /* UIColor_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_extension.swift; sourceTree = "<group>"; };
 		F95C20212BFB9A2B00DBED6A /* LocationPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPreviewView.swift; sourceTree = "<group>"; };
 		F95C20232BFBB79900DBED6A /* RoutePolylineStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePolylineStyles.swift; sourceTree = "<group>"; };
+		F95C20282BFC0F8300DBED6A /* LocationsViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewDelegate.swift; sourceTree = "<group>"; };
 		F96DA57B2B5C0AFF00EFAD52 /* RecyclingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecyclingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96DA57E2B5C0AFF00EFAD52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F96DA5802B5C0AFF00EFAD52 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				891490CD2BFB354B007D1817 /* YandexMapView.swift */,
 				F95C20212BFB9A2B00DBED6A /* LocationPreviewView.swift */,
 				F95C20232BFBB79900DBED6A /* RoutePolylineStyles.swift */,
+				F95C20282BFC0F8300DBED6A /* LocationsViewDelegate.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				F9E55E062BFA3DD000BD720D /* LocationsDataService.swift in Sources */,
 				F96DA5AE2B5C73EB00EFAD52 /* AccountSend.swift in Sources */,
 				F9E0AEDB2BFA334700C47926 /* Palette.swift in Sources */,
+				F95C20292BFC0F8300DBED6A /* LocationsViewDelegate.swift in Sources */,
 				F9E55E162BFAC48D00BD720D /* LocationsListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

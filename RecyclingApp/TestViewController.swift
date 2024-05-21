@@ -10,7 +10,8 @@ import UIKit
 import SwiftUI
 import YandexMapsMobile
 
-class TestViewController: UIViewController {
+class TestViewController: UIViewController, LocationsViewDelegate {
+    
 
     @IBOutlet weak var locationContainerView: UIView!
     
@@ -23,6 +24,10 @@ class TestViewController: UIViewController {
         
         // Создаем экземпляр LocationViewModel
         let locationsViewModel = LocationsViewModel(userLocationBinding: .constant(nil))
+        locationsViewModel.setMapView(mapView: YandexMapView(cameraPosition: .constant(nil)))
+        // Установите делегата
+        locationsViewModel.delegate = self
+        
 
         // Создаем представление LocationsView и передаем LocationViewModel как окружение
         let locationView = LocationsView().environmentObject(locationsViewModel)
@@ -53,8 +58,8 @@ class TestViewController: UIViewController {
         
         print("|||||||||||||||||||||||| mapRegion", locationsViewModel.mapRegion.latitude, locationsViewModel.mapRegion.longitude)
         print("|||||||||||||||||||||||| cameraposition first", locationsViewModel.cameraPosition?.target.latitude, locationsViewModel.cameraPosition?.target.longitude)
-        locationsViewModel.setMapView(mapView: YandexMapView(cameraPosition: .constant(nil)))
         print("|||||||||||||||||||||||| cameraposition second", locationsViewModel.cameraPosition?.target.latitude, locationsViewModel.cameraPosition?.target.longitude)
+        
         let requestPoints : [YMKRequestPoint] = [
             YMKRequestPoint(
                 point: Const.routeStartPoint, type: .waypoint,
@@ -83,6 +88,12 @@ class TestViewController: UIViewController {
         
         mapView = locationsViewModel.yandexMapView!
     }
+    
+    //MARK: Функции делегата LocationsViewDelegate
+    func didTapButton() {
+        // Обработка нажатия кнопки
+        print("Button tapped in TestViewController")
+    }
 }
 
 extension TestViewController {
@@ -107,4 +118,6 @@ extension TestViewController {
 
         present(alert, animated: true, completion: nil)
     }
+    
 }
+

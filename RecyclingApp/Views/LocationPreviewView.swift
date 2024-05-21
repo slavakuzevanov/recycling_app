@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LocationPreviewView: View {
+    @EnvironmentObject var vm: LocationsViewModel
     
     let location: Location
     
@@ -35,6 +36,7 @@ struct LocationPreviewView: View {
     ZStack{
         Color.green.ignoresSafeArea()
         LocationPreviewView(location: LocationsDataService.locations.first!)
+            .environmentObject(LocationsViewModel(userLocationBinding: .constant(nil)))
             .background(Color.white)
             .padding()
     }
@@ -78,7 +80,10 @@ extension LocationPreviewView {
     }
     
     private var nextButton: some View {
-        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+        Button(action: {
+            vm.buttonTapped()
+            print("Button tapped in LocationsPreviewView")
+        }, label: {
             Text("Next")
                 .font(.headline)
                 .frame(width: 125, height: 35)
