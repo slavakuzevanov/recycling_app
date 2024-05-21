@@ -330,17 +330,16 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZN-83-Trq">
                                 <rect key="frame" x="126" y="388" width="143" height="77"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
+                                <buttonConfiguration key="configuration" style="plain" image="rectangle.portrait.and.arrow.forward" catalog="system">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Log out">
+                                        <fragment content="Leave">
                                             <attributes>
                                                 <font key="NSFont" size="29" name="Helvetica"/>
-                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                    <color key="baseForegroundColor" red="0.93725490199999995" green="0.69411764710000001" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <color key="baseBackgroundColor" red="0.48627450979999998" green="0.58823529409999997" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseForegroundColor" red="0.99607843137254903" green="0.29019607843137252" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="didTapLogoutButton:" destination="XLE-yv-dtk" eventType="touchUpInside" id="fZc-3Z-MLK"/>
@@ -405,9 +404,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <segue destination="dXu-5F-zxb" kind="show" id="XhA-yP-I7z"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EgI-xi-NNA"/>
@@ -419,10 +415,10 @@
             </objects>
             <point key="canvasLocation" x="5681.679389312977" y="26.760563380281692"/>
         </scene>
-        <!--Test View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="QeO-zh-Mk7">
             <objects>
-                <viewController id="dXu-5F-zxb" customClass="TestViewController" customModule="RecyclingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dXu-5F-zxb" customClass="MapViewController" customModule="RecyclingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N7T-1J-MZc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -436,7 +432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3rm-fE-LVS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6645" y="27"/>
+            <point key="canvasLocation" x="5682" y="763"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="rez-8g-Y4J">
@@ -475,38 +471,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="sVW-Vx-IZU" kind="relationship" relationship="rootViewController" id="c1y-4r-DYO"/>
+                        <segue destination="dXu-5F-zxb" kind="relationship" relationship="rootViewController" id="5UB-0r-zC2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eR0-a2-6o4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4781" y="763"/>
-        </scene>
-        <!--Map View Controller-->
-        <scene sceneID="cwc-wY-fBZ">
-            <objects>
-                <viewController id="sVW-Vx-IZU" customClass="MapViewController" customModule="RecyclingApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bYz-cn-rPq">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ncn-wx-E4G" customClass="YMKMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="905"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="69o-Hm-gaU"/>
-                        <color key="backgroundColor" red="0.62352941179999999" green="0.70588235290000001" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Wmi-bQ-UuK"/>
-                    <connections>
-                        <outlet property="mapView" destination="Ncn-wx-E4G" id="B0T-Gt-rga"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7sa-cZ-uZX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5681.679389312977" y="762.67605633802816"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -521,6 +491,7 @@
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="map" catalog="system" width="128" height="112"/>
         <image name="map.fill" catalog="system" width="128" height="110"/>
+        <image name="rectangle.portrait.and.arrow.forward" catalog="system" width="128" height="108"/>
         <namedColor name="AccentColor">
             <color red="0.60600000619888306" green="1" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

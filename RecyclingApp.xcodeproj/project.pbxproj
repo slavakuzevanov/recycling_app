@@ -39,7 +39,6 @@
 		F9B8D70E2BF962EA000C6192 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B8D70D2BF962EA000C6192 /* TabCurve.swift */; };
 		F9B8D7102BF9786C000C6192 /* TabBarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B8D70F2BF9786C000C6192 /* TabBarState.swift */; };
 		F9B8D7122BF9869D000C6192 /* TabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B8D7112BF9869D000C6192 /* TabBarDelegate.swift */; };
-		F9D27A2C2BF8D38F0020B6E9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D27A2B2BF8D38F0020B6E9 /* MapViewController.swift */; };
 		F9E0AED82BFA261F00C47926 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E0AED72BFA261F00C47926 /* Const.swift */; };
 		F9E0AEDB2BFA334700C47926 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E0AEDA2BFA334700C47926 /* Palette.swift */; };
 		F9E55E042BFA3CAF00BD720D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5802B5C0AFF00EFAD52 /* SceneDelegate.swift */; };
@@ -47,7 +46,7 @@
 		F9E55E0B2BFA402E00BD720D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E55E0A2BFA402E00BD720D /* Location.swift */; };
 		F9E55E0E2BFA429F00BD720D /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E55E0D2BFA429F00BD720D /* LocationsView.swift */; };
 		F9E55E122BFA4ADE00BD720D /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E55E112BFA4ADE00BD720D /* LocationsViewModel.swift */; };
-		F9E55E142BFA591700BD720D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E55E132BFA591700BD720D /* TestViewController.swift */; };
+		F9E55E142BFA591700BD720D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E55E132BFA591700BD720D /* MapViewController.swift */; };
 		F9E55E162BFAC48D00BD720D /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E55E152BFAC48D00BD720D /* LocationsListView.swift */; };
 		F9F814DC2BEF98AF00E9DE48 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F814DB2BEF98AF00E9DE48 /* TabBarViewController.swift */; };
 		F9F814DE2BEF9F4D00E9DE48 /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F814DD2BEF9F4D00E9DE48 /* ProfileNavigationController.swift */; };
@@ -91,14 +90,13 @@
 		F9B8D70D2BF962EA000C6192 /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
 		F9B8D70F2BF9786C000C6192 /* TabBarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarState.swift; sourceTree = "<group>"; };
 		F9B8D7112BF9869D000C6192 /* TabBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarDelegate.swift; sourceTree = "<group>"; };
-		F9D27A2B2BF8D38F0020B6E9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F9E0AED72BFA261F00C47926 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		F9E0AEDA2BFA334700C47926 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		F9E55E052BFA3DD000BD720D /* LocationsDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsDataService.swift; path = RecyclingApp/DataServices/LocationsDataService.swift; sourceTree = SOURCE_ROOT; };
 		F9E55E0A2BFA402E00BD720D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		F9E55E0D2BFA429F00BD720D /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
 		F9E55E112BFA4ADE00BD720D /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
-		F9E55E132BFA591700BD720D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		F9E55E132BFA591700BD720D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F9E55E152BFAC48D00BD720D /* LocationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsListView.swift; sourceTree = "<group>"; };
 		F9F814DB2BEF98AF00E9DE48 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F9F814DD2BEF9F4D00E9DE48 /* ProfileNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
@@ -184,10 +182,9 @@
 				F9018CFD2B5EBE8D00FF71B9 /* UIColor_extension.swift */,
 				F9F814DB2BEF98AF00E9DE48 /* TabBarViewController.swift */,
 				F9F814DD2BEF9F4D00E9DE48 /* ProfileNavigationController.swift */,
-				F9D27A2B2BF8D38F0020B6E9 /* MapViewController.swift */,
 				F9B8D7012BF93DAF000C6192 /* MainApp.storyboard */,
 				F9E0AED72BFA261F00C47926 /* Const.swift */,
-				F9E55E132BFA591700BD720D /* TestViewController.swift */,
+				F9E55E132BFA591700BD720D /* MapViewController.swift */,
 			);
 			path = RecyclingApp;
 			sourceTree = "<group>";
@@ -385,10 +382,9 @@
 				F96DA57F2B5C0AFF00EFAD52 /* AppDelegate.swift in Sources */,
 				F9E0AED82BFA261F00C47926 /* Const.swift in Sources */,
 				F96DA5AC2B5C706A00EFAD52 /* CreateAccountViewController.swift in Sources */,
-				F9D27A2C2BF8D38F0020B6E9 /* MapViewController.swift in Sources */,
 				F9E55E122BFA4ADE00BD720D /* LocationsViewModel.swift in Sources */,
 				F9F814DE2BEF9F4D00E9DE48 /* ProfileNavigationController.swift in Sources */,
-				F9E55E142BFA591700BD720D /* TestViewController.swift in Sources */,
+				F9E55E142BFA591700BD720D /* MapViewController.swift in Sources */,
 				F9E55E042BFA3CAF00BD720D /* SceneDelegate.swift in Sources */,
 				F96DA59E2B5C21B100EFAD52 /* ErrorResponse.swift in Sources */,
 				F95C20242BFBB79900DBED6A /* RoutePolylineStyles.swift in Sources */,

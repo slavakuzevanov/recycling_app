@@ -114,6 +114,7 @@ extension LocationsView {
             print("Button tapped current location \(vm.mapRegion.latitude) \(vm.mapRegion.longitude)")
         }, label: {
             Image(systemName: "safari.fill")
+                .imageScale(.large)
                 .foregroundColor(Color(red: 239 / 255, green: 177 / 255, blue: 154 / 255))
         })
         .frame(width: Layout.buttonSize, height: Layout.buttonSize)
@@ -128,11 +129,12 @@ extension LocationsView {
             vm.scrollToCurrentRegion()
             print("Button2 tapped \(vm.mapRegion.latitude) \(vm.mapRegion.longitude)")
         }, label: {
-            Image(systemName: "safari.fill")
+            Image(systemName: "mappin.and.ellipse.circle.fill")
+                .imageScale(.large)
                 .foregroundColor(Color(red: 239 / 255, green: 177 / 255, blue: 154 / 255))
         })
         .frame(width: Layout.buttonSize, height: Layout.buttonSize)
-        .background(Color(red: 154 / 255, green: 0 / 255, blue: 107 / 255))
+        .background(Color(red: 154 / 255, green: 181 / 255, blue: 107 / 255))
         .cornerRadius(10)
         .padding(.leading, Layout.buttonMargin)
     }
