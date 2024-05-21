@@ -81,11 +81,17 @@ class LocationsViewModel: NSObject, ObservableObject {
     func scrollToUserLocation() {
         if let userLocation {
             cameraPosition = YMKCameraPosition(target: userLocation, zoom: 15, azimuth: 0, tilt: 0)
+            yandexMapView?.mapView.mapWindow.map.move(with: cameraPosition!,
+                                          animation: .init(type: .smooth, duration: 1.5),
+                                          cameraCallback: nil)
         }
     }
     
     func scrollToCurrentRegion() {
         cameraPosition = YMKCameraPosition(target: mapRegion, zoom: 15, azimuth: 0, tilt: 0)
+        yandexMapView?.mapView.mapWindow.map.move(with: cameraPosition!,
+                                      animation: .init(type: .smooth, duration: 1.5),
+                                      cameraCallback: nil)
     }
     
     func showNextLocation(location: Location) {

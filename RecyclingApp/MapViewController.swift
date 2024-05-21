@@ -43,10 +43,6 @@ class MapViewController: UIViewController, YMKUserLocationObjectListener, CLLoca
         userLocationLayer.isHeadingEnabled = true
         userLocationLayer.setObjectListenerWith(self)
 
-        // Настройка и отображение карты
-//        mapView.mapWindow.map.move(
-//            with: YMKCameraPosition(target: YMKPoint(latitude: 55.751244, longitude: 37.618423), zoom: 14, azimuth: 0, tilt: 0)
-//        )
 
         // Настройка CLLocationManager для запроса разрешения на использование геолокации
         cllocationManager = CLLocationManager()
