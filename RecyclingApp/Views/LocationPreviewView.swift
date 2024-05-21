@@ -71,7 +71,9 @@ extension LocationPreviewView {
     }
     
     private var learnMoreButton: some View {
-        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+        Button(action: {
+            vm.sheetLocation = location
+        }, label: {
             Text("Learn more")
                 .font(.headline)
                 .frame(width: 125, height: 35)

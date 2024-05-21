@@ -40,6 +40,9 @@ class LocationsViewModel: NSObject, ObservableObject {
     // Show list of locations
     @Published var showLocationsList: Bool = false
     
+    // Show location detai via sheet
+    @Published var sheetLocation: Location? = nil
+    
     @Published var userLocation: YMKPoint? 
     @Published var cameraPosition: YMKCameraPosition?
     
@@ -66,6 +69,10 @@ class LocationsViewModel: NSObject, ObservableObject {
             mapRegion = YMKPoint(latitude: location.coordinates.latitude, longitude: location.coordinates.longitude)
         }
         print("Map region latitude \(mapRegion.latitude) longitude \(mapRegion.longitude)")
+        cameraPosition = YMKCameraPosition(target: mapRegion, zoom: 15, azimuth: 0, tilt: 0)
+        yandexMapView?.mapView.mapWindow.map.move(with: cameraPosition!,
+                                      animation: .init(type: .smooth, duration: 1.5),
+                                      cameraCallback: nil)
     }
     
     func setMapView(mapView: YandexMapView) {

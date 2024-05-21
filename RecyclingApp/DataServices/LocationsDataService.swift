@@ -12,6 +12,16 @@ class LocationsDataService {
     
     static let locations: [Location] = [
         Location(
+            name: "EcoPunct",
+            cityName: "Moscow",
+            coordinates: CLLocationCoordinate2D(latitude: 55.6531091408732, longitude: 37.646598067987746),
+            description: "Пункт приема бытовой техники и батареек. PET / LEAD / NiCD",
+            imageNames: [
+                "eco-punct-1",
+                "eco-punct-2",
+            ],
+            link: "https://x5vmeste.ru/"),
+        Location(
             name: "Colosseum",
             cityName: "Rome",
             coordinates: CLLocationCoordinate2D(latitude: 41.8902, longitude: 12.4922),
