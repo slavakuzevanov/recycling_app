@@ -31,6 +31,7 @@
 		F96DA5AC2B5C706A00EFAD52 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5AB2B5C706A00EFAD52 /* CreateAccountViewController.swift */; };
 		F96DA5AE2B5C73EB00EFAD52 /* AccountSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5AD2B5C73EB00EFAD52 /* AccountSend.swift */; };
 		F96DA5B02B5C7D4300EFAD52 /* AccountRecieved.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DA5AF2B5C7D4300EFAD52 /* AccountRecieved.swift */; };
+		F98906E72C1F235A00DF3252 /* yolov5sTraffic.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F98906E62C1F235A00DF3252 /* yolov5sTraffic.mlmodel */; };
 		F9B8D7022BF93DAF000C6192 /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9B8D7012BF93DAF000C6192 /* MainApp.storyboard */; };
 		F9B8D7042BF946A0000C6192 /* UINavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B8D7032BF946A0000C6192 /* UINavViewController.swift */; };
 		F9B8D7072BF9495A000C6192 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B8D7062BF9495A000C6192 /* UserDefaults+Extension.swift */; };
@@ -48,6 +49,9 @@
 		F9E55E122BFA4ADE00BD720D /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E55E112BFA4ADE00BD720D /* LocationsViewModel.swift */; };
 		F9E55E142BFA591700BD720D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E55E132BFA591700BD720D /* MapViewController.swift */; };
 		F9E55E162BFAC48D00BD720D /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E55E152BFAC48D00BD720D /* LocationsListView.swift */; };
+		F9F2503F2C1F15D800B3F30C /* ViewControllerCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2503E2C1F15D800B3F30C /* ViewControllerCamera.swift */; };
+		F9F250412C1F1D8500B3F30C /* ViewControllerDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F250402C1F1D8500B3F30C /* ViewControllerDetection.swift */; };
+		F9F250432C1F1E3F00B3F30C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F250422C1F1E3F00B3F30C /* Constants.swift */; };
 		F9F814DC2BEF98AF00E9DE48 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F814DB2BEF98AF00E9DE48 /* TabBarViewController.swift */; };
 		F9F814DE2BEF9F4D00E9DE48 /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F814DD2BEF9F4D00E9DE48 /* ProfileNavigationController.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +86,7 @@
 		F96DA5AB2B5C706A00EFAD52 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		F96DA5AD2B5C73EB00EFAD52 /* AccountSend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSend.swift; sourceTree = "<group>"; };
 		F96DA5AF2B5C7D4300EFAD52 /* AccountRecieved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRecieved.swift; sourceTree = "<group>"; };
+		F98906E62C1F235A00DF3252 /* yolov5sTraffic.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = yolov5sTraffic.mlmodel; sourceTree = "<group>"; };
 		F9B8D7012BF93DAF000C6192 /* MainApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainApp.storyboard; sourceTree = "<group>"; };
 		F9B8D7032BF946A0000C6192 /* UINavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavViewController.swift; sourceTree = "<group>"; };
 		F9B8D7062BF9495A000C6192 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
@@ -98,6 +103,9 @@
 		F9E55E112BFA4ADE00BD720D /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
 		F9E55E132BFA591700BD720D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F9E55E152BFAC48D00BD720D /* LocationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsListView.swift; sourceTree = "<group>"; };
+		F9F2503E2C1F15D800B3F30C /* ViewControllerCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCamera.swift; sourceTree = "<group>"; };
+		F9F250402C1F1D8500B3F30C /* ViewControllerDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDetection.swift; sourceTree = "<group>"; };
+		F9F250422C1F1E3F00B3F30C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F9F814DB2BEF98AF00E9DE48 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F9F814DD2BEF9F4D00E9DE48 /* ProfileNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +193,8 @@
 				F9B8D7012BF93DAF000C6192 /* MainApp.storyboard */,
 				F9E0AED72BFA261F00C47926 /* Const.swift */,
 				F9E55E132BFA591700BD720D /* MapViewController.swift */,
+				F9F2503E2C1F15D800B3F30C /* ViewControllerCamera.swift */,
+				F9F250402C1F1D8500B3F30C /* ViewControllerDetection.swift */,
 			);
 			path = RecyclingApp;
 			sourceTree = "<group>";
@@ -220,7 +230,9 @@
 		F9E55E072BFA3FD600BD720D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F98906E62C1F235A00DF3252 /* yolov5sTraffic.mlmodel */,
 				F9E55E0A2BFA402E00BD720D /* Location.swift */,
+				F9F250422C1F1E3F00B3F30C /* Constants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -385,6 +397,7 @@
 				F9E55E122BFA4ADE00BD720D /* LocationsViewModel.swift in Sources */,
 				F9F814DE2BEF9F4D00E9DE48 /* ProfileNavigationController.swift in Sources */,
 				F9E55E142BFA591700BD720D /* MapViewController.swift in Sources */,
+				F9F250412C1F1D8500B3F30C /* ViewControllerDetection.swift in Sources */,
 				F9E55E042BFA3CAF00BD720D /* SceneDelegate.swift in Sources */,
 				F96DA59E2B5C21B100EFAD52 /* ErrorResponse.swift in Sources */,
 				F95C20242BFBB79900DBED6A /* RoutePolylineStyles.swift in Sources */,
@@ -392,8 +405,10 @@
 				F9B8D70E2BF962EA000C6192 /* TabCurve.swift in Sources */,
 				F96DA59A2B5C216D00EFAD52 /* Message.swift in Sources */,
 				F9B8D7072BF9495A000C6192 /* UserDefaults+Extension.swift in Sources */,
+				F98906E72C1F235A00DF3252 /* yolov5sTraffic.mlmodel in Sources */,
 				F9B8D70A2BF9566D000C6192 /* MainApp.swift in Sources */,
 				F95C202B2BFC341500DBED6A /* LocationDetailView.swift in Sources */,
+				F9F250432C1F1E3F00B3F30C /* Constants.swift in Sources */,
 				F95C20222BFB9A2B00DBED6A /* LocationPreviewView.swift in Sources */,
 				F96DA5AA2B5C627300EFAD52 /* User.swift in Sources */,
 				F9B8D7042BF946A0000C6192 /* UINavViewController.swift in Sources */,
@@ -406,6 +421,7 @@
 				F9B8D7102BF9786C000C6192 /* TabBarState.swift in Sources */,
 				F9E55E062BFA3DD000BD720D /* LocationsDataService.swift in Sources */,
 				F96DA5AE2B5C73EB00EFAD52 /* AccountSend.swift in Sources */,
+				F9F2503F2C1F15D800B3F30C /* ViewControllerCamera.swift in Sources */,
 				F9E0AEDB2BFA334700C47926 /* Palette.swift in Sources */,
 				F95C20292BFC0F8300DBED6A /* LocationsViewDelegate.swift in Sources */,
 				F9E55E162BFAC48D00BD720D /* LocationsListView.swift in Sources */,
@@ -565,6 +581,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecyclingApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This application required camera to work properly";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -595,6 +612,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecyclingApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This application required camera to work properly";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

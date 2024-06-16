@@ -74,10 +74,10 @@ struct YandexMapView: UIViewRepresentable {
     
     func updateUIView(_ uiView: YMKMapView, context: Context) {
         if let cameraPosition {
-            //print("updating camera position")
-//            uiView.mapWindow.map.move(with: cameraPosition,
-//                                      animation: .init(type: .smooth, duration: 1.5),
-//                                      cameraCallback: nil)
+            print("updating camera position")
+            uiView.mapWindow.map.move(with: cameraPosition,
+                                      animation: .init(type: .smooth, duration: 1.5),
+                                      cameraCallback: nil)
         }
     }
     

@@ -391,10 +391,10 @@
             </objects>
             <point key="canvasLocation" x="4781" y="27"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller Detection-->
         <scene sceneID="pCx-V9-LQA">
             <objects>
-                <viewController id="4C1-4s-tv3" sceneMemberID="viewController">
+                <viewController id="4C1-4s-tv3" customClass="ViewControllerDetection" customModule="RecyclingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mc7-Y2-qvl">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -404,12 +404,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="didTapCaptureButton:" destination="4C1-4s-tv3" eventType="touchUpInside" id="PSI-Pk-qIl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EgI-xi-NNA"/>
                         <color key="backgroundColor" red="0.62352941179999999" green="0.70588235290000001" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="wgb-Id-HGL"/>
+                    <connections>
+                        <outlet property="captureButton" destination="EZo-9H-9jh" id="2CR-Vj-3Gq"/>
+                        <outlet property="previewView" destination="Mc7-Y2-qvl" id="5cf-b5-NbR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhJ-nU-EAj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -419,20 +426,27 @@
         <scene sceneID="QeO-zh-Mk7">
             <objects>
                 <viewController id="dXu-5F-zxb" customClass="MapViewController" customModule="RecyclingApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="N7T-1J-MZc">
+                    <view key="view" contentMode="scaleToFill" id="yez-T3-Vrv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="gqR-6g-Pi5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zgb-Cj-PU1">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="887"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Toh-up-yyC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Guz-iH-qMD"/>
                     <connections>
-                        <outlet property="locationContainerView" destination="N7T-1J-MZc" id="djH-QA-Cot"/>
+                        <outlet property="locationContainerView" destination="Zgb-Cj-PU1" id="Lnz-sx-PSW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3rm-fE-LVS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5682" y="763"/>
+            <point key="canvasLocation" x="5681.679389312977" y="762.67605633802816"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="rez-8g-Y4J">
@@ -499,7 +513,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

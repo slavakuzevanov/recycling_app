@@ -32,6 +32,7 @@ struct LocationsView: View {
                     .frame(maxWidth: .infinity, maxHeight: 700, alignment: .topLeading)
                     .padding(10)
                     //.background(Color.orange)
+                    .offset(y: -30)
                 
                 // Right side buttons
                 HStack{
@@ -41,6 +42,7 @@ struct LocationsView: View {
                         userLocationButton
                         Spacer()
                         mapRegionButton
+                        Spacer()
                     }
                     .padding(8)
                     //.background(Color.black)
@@ -58,7 +60,7 @@ struct LocationsView: View {
                             LocationPreviewView(location: location)
                                 .shadow(color: .black.opacity(0.3), radius: 5)
                                 .padding()
-                                .offset(y: -70)
+                                .offset(y: -90)
                                 .transition(.asymmetric(
                                     insertion: .move(edge: .trailing),
                                     removal: .move(edge: .leading)))
